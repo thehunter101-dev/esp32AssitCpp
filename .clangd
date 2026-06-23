@@ -1,0 +1,20 @@
+CompileFlags:
+  Add:
+    # Asegúrate de usar gnu++2b (o gnu++23) para coincidir con tu compile_commands.json
+    - -std=gnu++2b
+    # Ruta de sistema necesaria para resolver machine/endian.h y dependencias de la toolchain
+    - -isystem=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/xtensa-esp-elf/include
+
+  Remove:
+    - -fno-shrink-wrap
+    - -fstrict-volatile-bitfields
+    - -fno-tree-switch-conversion
+    - -mlongcalls
+    - -fno-implicit-modules
+    - --target=*
+
+Diagnostics:
+  Suppress:
+    - pp_expr_bad_token_lparen
+    - pp_file_not_found
+    - unused-includes
