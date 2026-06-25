@@ -32,7 +32,7 @@ extern "C" void app_main() {
     lcd.clean(3,0);
 
     vTaskDelay(pdMS_TO_TICKS(500));
-    lcd.print("Unu",3,0);
+    lcd.print("Mamalo Jenner",3,0);
     while (true) {
         // El programa principal se queda aquí manteniendo el texto en pantalla
         vTaskDelay(pdMS_TO_TICKS(1000));

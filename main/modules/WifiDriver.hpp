@@ -1,5 +1,6 @@
 #ifndef WIFIDRIVER_H_
 #define WIFIDRIVER_H_
+#include <cstdint>
 #include <cstdio>
 #include <cstring>
 #include <string>
@@ -11,9 +12,10 @@
 #include "nvs_flash.h"
 
 class WifiDriver {
-    WifiDriver(std::string ssID, std::string passWord, int maxRetry = 5);
     public:
+        WifiDriver(std::string ssID, std::string passWord, int maxRetry = 5);
         void conect();
+        void init();
         void disconect();
         static int s_retry_num;
 
@@ -25,6 +27,9 @@ class WifiDriver {
         int _retry;
 
         static constexpr std::string TAG = "WIFI_MAIN";
+
+        void _eventHandler(void* arg, esp_event_base_t event_base, int32_t event_id, void* event_date);
+
 
 };
 
