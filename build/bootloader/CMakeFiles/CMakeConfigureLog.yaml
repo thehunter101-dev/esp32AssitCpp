@@ -34,6 +34,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/"
+      - "/home/thehunter101/.opencode/bin/"
       - "/home/thehunter101/miniconda3/bin/"
       - "/home/thehunter101/miniconda3/condabin/"
       - "/usr/local/sbin/"
@@ -42,6 +43,8 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/bin/"
+      - "/usr/lib/jvm/default-jdk/bin/"
+      - "/usr/lib/jvm/default-jre/bin/"
       - "/home/thehunter101/.dotnet/"
       - "/home/thehunter101/.dotnet/tools/"
       - "/opt/neko/"
@@ -59,6 +62,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/git"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/git"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/git"
+      - "/home/thehunter101/.opencode/bin/git"
       - "/home/thehunter101/miniconda3/bin/git"
       - "/home/thehunter101/miniconda3/condabin/git"
       - "/usr/local/sbin/git"
@@ -83,6 +87,7 @@ events:
         - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin"
         - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin"
         - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools"
+        - "/home/thehunter101/.opencode/bin"
         - "/home/thehunter101/miniconda3/bin"
         - "/home/thehunter101/miniconda3/condabin"
         - "/usr/local/sbin"
@@ -91,6 +96,8 @@ events:
         - "/usr/sbin"
         - "/sbin"
         - "/bin"
+        - "/usr/lib/jvm/default-jdk/bin"
+        - "/usr/lib/jvm/default-jre/bin"
         - "/home/thehunter101/.dotnet"
         - "/home/thehunter101/.dotnet/tools"
         - "/opt/neko"
@@ -127,6 +134,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/"
+      - "/home/thehunter101/.opencode/bin/"
       - "/home/thehunter101/miniconda3/bin/"
       - "/home/thehunter101/miniconda3/condabin/"
       - "/usr/local/sbin/"
@@ -135,6 +143,8 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/bin/"
+      - "/usr/lib/jvm/default-jdk/bin/"
+      - "/usr/lib/jvm/default-jre/bin/"
       - "/home/thehunter101/.dotnet/"
       - "/home/thehunter101/.dotnet/tools/"
       - "/opt/neko/"
@@ -152,6 +162,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/uname"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/uname"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/uname"
+      - "/home/thehunter101/.opencode/bin/uname"
       - "/home/thehunter101/miniconda3/bin/uname"
       - "/home/thehunter101/miniconda3/condabin/uname"
       - "/usr/local/sbin/uname"
@@ -176,6 +187,7 @@ events:
         - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin"
         - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin"
         - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools"
+        - "/home/thehunter101/.opencode/bin"
         - "/home/thehunter101/miniconda3/bin"
         - "/home/thehunter101/miniconda3/condabin"
         - "/usr/local/sbin"
@@ -184,6 +196,8 @@ events:
         - "/usr/sbin"
         - "/sbin"
         - "/bin"
+        - "/usr/lib/jvm/default-jdk/bin"
+        - "/usr/lib/jvm/default-jre/bin"
         - "/home/thehunter101/.dotnet"
         - "/home/thehunter101/.dotnet/tools"
         - "/opt/neko"
@@ -231,6 +245,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/"
+      - "/home/thehunter101/.opencode/bin/"
       - "/home/thehunter101/miniconda3/bin/"
       - "/home/thehunter101/miniconda3/condabin/"
       - "/usr/local/sbin/"
@@ -239,6 +254,8 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/bin/"
+      - "/usr/lib/jvm/default-jdk/bin/"
+      - "/usr/lib/jvm/default-jre/bin/"
       - "/home/thehunter101/.dotnet/"
       - "/home/thehunter101/.dotnet/tools/"
       - "/opt/neko/"
@@ -278,6 +295,9 @@ events:
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/ninja-build"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/ninja"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/samu"
+      - "/home/thehunter101/.opencode/bin/ninja-build"
+      - "/home/thehunter101/.opencode/bin/ninja"
+      - "/home/thehunter101/.opencode/bin/samu"
       - "/home/thehunter101/miniconda3/bin/ninja-build"
       - "/home/thehunter101/miniconda3/bin/ninja"
       - "/home/thehunter101/miniconda3/bin/samu"
@@ -311,6 +331,7 @@ events:
         - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin"
         - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin"
         - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools"
+        - "/home/thehunter101/.opencode/bin"
         - "/home/thehunter101/miniconda3/bin"
         - "/home/thehunter101/miniconda3/condabin"
         - "/usr/local/sbin"
@@ -319,6 +340,8 @@ events:
         - "/usr/sbin"
         - "/sbin"
         - "/bin"
+        - "/usr/lib/jvm/default-jdk/bin"
+        - "/usr/lib/jvm/default-jre/bin"
         - "/home/thehunter101/.dotnet"
         - "/home/thehunter101/.dotnet/tools"
         - "/opt/neko"
@@ -356,6 +379,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/"
+      - "/home/thehunter101/.opencode/bin/"
       - "/home/thehunter101/miniconda3/bin/"
       - "/home/thehunter101/miniconda3/condabin/"
       - "/usr/local/sbin/"
@@ -364,6 +388,8 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/bin/"
+      - "/usr/lib/jvm/default-jdk/bin/"
+      - "/usr/lib/jvm/default-jre/bin/"
       - "/home/thehunter101/.dotnet/"
       - "/home/thehunter101/.dotnet/tools/"
       - "/opt/neko/"
@@ -395,6 +421,7 @@ events:
         - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin"
         - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin"
         - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools"
+        - "/home/thehunter101/.opencode/bin"
         - "/home/thehunter101/miniconda3/bin"
         - "/home/thehunter101/miniconda3/condabin"
         - "/usr/local/sbin"
@@ -403,6 +430,8 @@ events:
         - "/usr/sbin"
         - "/sbin"
         - "/bin"
+        - "/usr/lib/jvm/default-jdk/bin"
+        - "/usr/lib/jvm/default-jre/bin"
         - "/home/thehunter101/.dotnet"
         - "/home/thehunter101/.dotnet/tools"
         - "/opt/neko"
@@ -455,6 +484,7 @@ events:
         - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin"
         - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin"
         - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools"
+        - "/home/thehunter101/.opencode/bin"
         - "/home/thehunter101/miniconda3/bin"
         - "/home/thehunter101/miniconda3/condabin"
         - "/usr/local/sbin"
@@ -463,6 +493,8 @@ events:
         - "/usr/sbin"
         - "/sbin"
         - "/bin"
+        - "/usr/lib/jvm/default-jdk/bin"
+        - "/usr/lib/jvm/default-jre/bin"
         - "/home/thehunter101/.dotnet"
         - "/home/thehunter101/.dotnet/tools"
         - "/opt/neko"
@@ -524,6 +556,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/"
+      - "/home/thehunter101/.opencode/bin/"
       - "/home/thehunter101/miniconda3/bin/"
       - "/home/thehunter101/miniconda3/condabin/"
       - "/usr/local/sbin/"
@@ -532,6 +565,8 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/bin/"
+      - "/usr/lib/jvm/default-jdk/bin/"
+      - "/usr/lib/jvm/default-jre/bin/"
       - "/home/thehunter101/.dotnet/"
       - "/home/thehunter101/.dotnet/tools/"
       - "/opt/neko/"
@@ -557,6 +592,7 @@ events:
         - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin"
         - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin"
         - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools"
+        - "/home/thehunter101/.opencode/bin"
         - "/home/thehunter101/miniconda3/bin"
         - "/home/thehunter101/miniconda3/condabin"
         - "/usr/local/sbin"
@@ -565,6 +601,8 @@ events:
         - "/usr/sbin"
         - "/sbin"
         - "/bin"
+        - "/usr/lib/jvm/default-jdk/bin"
+        - "/usr/lib/jvm/default-jre/bin"
         - "/home/thehunter101/.dotnet"
         - "/home/thehunter101/.dotnet/tools"
         - "/opt/neko"
@@ -603,6 +641,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/"
+      - "/home/thehunter101/.opencode/bin/"
       - "/home/thehunter101/miniconda3/bin/"
       - "/home/thehunter101/miniconda3/condabin/"
       - "/usr/local/sbin/"
@@ -611,6 +650,8 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/bin/"
+      - "/usr/lib/jvm/default-jdk/bin/"
+      - "/usr/lib/jvm/default-jre/bin/"
       - "/home/thehunter101/.dotnet/"
       - "/home/thehunter101/.dotnet/tools/"
       - "/opt/neko/"
@@ -636,6 +677,7 @@ events:
         - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin"
         - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin"
         - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools"
+        - "/home/thehunter101/.opencode/bin"
         - "/home/thehunter101/miniconda3/bin"
         - "/home/thehunter101/miniconda3/condabin"
         - "/usr/local/sbin"
@@ -644,6 +686,8 @@ events:
         - "/usr/sbin"
         - "/sbin"
         - "/bin"
+        - "/usr/lib/jvm/default-jdk/bin"
+        - "/usr/lib/jvm/default-jre/bin"
         - "/home/thehunter101/.dotnet"
         - "/home/thehunter101/.dotnet/tools"
         - "/opt/neko"
@@ -682,6 +726,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/"
+      - "/home/thehunter101/.opencode/bin/"
       - "/home/thehunter101/miniconda3/bin/"
       - "/home/thehunter101/miniconda3/condabin/"
       - "/usr/local/sbin/"
@@ -690,6 +735,8 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/bin/"
+      - "/usr/lib/jvm/default-jdk/bin/"
+      - "/usr/lib/jvm/default-jre/bin/"
       - "/home/thehunter101/.dotnet/"
       - "/home/thehunter101/.dotnet/tools/"
       - "/opt/neko/"
@@ -715,6 +762,7 @@ events:
         - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin"
         - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin"
         - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools"
+        - "/home/thehunter101/.opencode/bin"
         - "/home/thehunter101/miniconda3/bin"
         - "/home/thehunter101/miniconda3/condabin"
         - "/usr/local/sbin"
@@ -723,6 +771,8 @@ events:
         - "/usr/sbin"
         - "/sbin"
         - "/bin"
+        - "/usr/lib/jvm/default-jdk/bin"
+        - "/usr/lib/jvm/default-jre/bin"
         - "/home/thehunter101/.dotnet"
         - "/home/thehunter101/.dotnet/tools"
         - "/opt/neko"
@@ -761,6 +811,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/"
+      - "/home/thehunter101/.opencode/bin/"
       - "/home/thehunter101/miniconda3/bin/"
       - "/home/thehunter101/miniconda3/condabin/"
       - "/usr/local/sbin/"
@@ -769,6 +820,8 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/bin/"
+      - "/usr/lib/jvm/default-jdk/bin/"
+      - "/usr/lib/jvm/default-jre/bin/"
       - "/home/thehunter101/.dotnet/"
       - "/home/thehunter101/.dotnet/tools/"
       - "/opt/neko/"
@@ -794,6 +847,7 @@ events:
         - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin"
         - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin"
         - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools"
+        - "/home/thehunter101/.opencode/bin"
         - "/home/thehunter101/miniconda3/bin"
         - "/home/thehunter101/miniconda3/condabin"
         - "/usr/local/sbin"
@@ -802,6 +856,8 @@ events:
         - "/usr/sbin"
         - "/sbin"
         - "/bin"
+        - "/usr/lib/jvm/default-jdk/bin"
+        - "/usr/lib/jvm/default-jre/bin"
         - "/home/thehunter101/.dotnet"
         - "/home/thehunter101/.dotnet/tools"
         - "/opt/neko"
@@ -840,6 +896,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/"
+      - "/home/thehunter101/.opencode/bin/"
       - "/home/thehunter101/miniconda3/bin/"
       - "/home/thehunter101/miniconda3/condabin/"
       - "/usr/local/sbin/"
@@ -848,6 +905,8 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/bin/"
+      - "/usr/lib/jvm/default-jdk/bin/"
+      - "/usr/lib/jvm/default-jre/bin/"
       - "/home/thehunter101/.dotnet/"
       - "/home/thehunter101/.dotnet/tools/"
       - "/opt/neko/"
@@ -873,6 +932,7 @@ events:
         - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin"
         - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin"
         - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools"
+        - "/home/thehunter101/.opencode/bin"
         - "/home/thehunter101/miniconda3/bin"
         - "/home/thehunter101/miniconda3/condabin"
         - "/usr/local/sbin"
@@ -881,6 +941,8 @@ events:
         - "/usr/sbin"
         - "/sbin"
         - "/bin"
+        - "/usr/lib/jvm/default-jdk/bin"
+        - "/usr/lib/jvm/default-jre/bin"
         - "/home/thehunter101/.dotnet"
         - "/home/thehunter101/.dotnet/tools"
         - "/opt/neko"
@@ -919,6 +981,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/"
+      - "/home/thehunter101/.opencode/bin/"
       - "/home/thehunter101/miniconda3/bin/"
       - "/home/thehunter101/miniconda3/condabin/"
       - "/usr/local/sbin/"
@@ -927,6 +990,8 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/bin/"
+      - "/usr/lib/jvm/default-jdk/bin/"
+      - "/usr/lib/jvm/default-jre/bin/"
       - "/home/thehunter101/.dotnet/"
       - "/home/thehunter101/.dotnet/tools/"
       - "/opt/neko/"
@@ -952,6 +1017,7 @@ events:
         - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin"
         - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin"
         - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools"
+        - "/home/thehunter101/.opencode/bin"
         - "/home/thehunter101/miniconda3/bin"
         - "/home/thehunter101/miniconda3/condabin"
         - "/usr/local/sbin"
@@ -960,6 +1026,8 @@ events:
         - "/usr/sbin"
         - "/sbin"
         - "/bin"
+        - "/usr/lib/jvm/default-jdk/bin"
+        - "/usr/lib/jvm/default-jre/bin"
         - "/home/thehunter101/.dotnet"
         - "/home/thehunter101/.dotnet/tools"
         - "/opt/neko"
@@ -998,6 +1066,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/"
+      - "/home/thehunter101/.opencode/bin/"
       - "/home/thehunter101/miniconda3/bin/"
       - "/home/thehunter101/miniconda3/condabin/"
       - "/usr/local/sbin/"
@@ -1006,6 +1075,8 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/bin/"
+      - "/usr/lib/jvm/default-jdk/bin/"
+      - "/usr/lib/jvm/default-jre/bin/"
       - "/home/thehunter101/.dotnet/"
       - "/home/thehunter101/.dotnet/tools/"
       - "/opt/neko/"
@@ -1031,6 +1102,7 @@ events:
         - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin"
         - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin"
         - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools"
+        - "/home/thehunter101/.opencode/bin"
         - "/home/thehunter101/miniconda3/bin"
         - "/home/thehunter101/miniconda3/condabin"
         - "/usr/local/sbin"
@@ -1039,6 +1111,8 @@ events:
         - "/usr/sbin"
         - "/sbin"
         - "/bin"
+        - "/usr/lib/jvm/default-jdk/bin"
+        - "/usr/lib/jvm/default-jre/bin"
         - "/home/thehunter101/.dotnet"
         - "/home/thehunter101/.dotnet/tools"
         - "/opt/neko"
@@ -1077,6 +1151,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/"
+      - "/home/thehunter101/.opencode/bin/"
       - "/home/thehunter101/miniconda3/bin/"
       - "/home/thehunter101/miniconda3/condabin/"
       - "/usr/local/sbin/"
@@ -1085,6 +1160,8 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/bin/"
+      - "/usr/lib/jvm/default-jdk/bin/"
+      - "/usr/lib/jvm/default-jre/bin/"
       - "/home/thehunter101/.dotnet/"
       - "/home/thehunter101/.dotnet/tools/"
       - "/opt/neko/"
@@ -1110,6 +1187,7 @@ events:
         - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin"
         - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin"
         - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools"
+        - "/home/thehunter101/.opencode/bin"
         - "/home/thehunter101/miniconda3/bin"
         - "/home/thehunter101/miniconda3/condabin"
         - "/usr/local/sbin"
@@ -1118,6 +1196,8 @@ events:
         - "/usr/sbin"
         - "/sbin"
         - "/bin"
+        - "/usr/lib/jvm/default-jdk/bin"
+        - "/usr/lib/jvm/default-jre/bin"
         - "/home/thehunter101/.dotnet"
         - "/home/thehunter101/.dotnet/tools"
         - "/opt/neko"
@@ -1156,6 +1236,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/"
+      - "/home/thehunter101/.opencode/bin/"
       - "/home/thehunter101/miniconda3/bin/"
       - "/home/thehunter101/miniconda3/condabin/"
       - "/usr/local/sbin/"
@@ -1164,6 +1245,8 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/bin/"
+      - "/usr/lib/jvm/default-jdk/bin/"
+      - "/usr/lib/jvm/default-jre/bin/"
       - "/home/thehunter101/.dotnet/"
       - "/home/thehunter101/.dotnet/tools/"
       - "/opt/neko/"
@@ -1181,6 +1264,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/xtensa-esp32-elf-dlltool"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/xtensa-esp32-elf-dlltool"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/xtensa-esp32-elf-dlltool"
+      - "/home/thehunter101/.opencode/bin/xtensa-esp32-elf-dlltool"
       - "/home/thehunter101/miniconda3/bin/xtensa-esp32-elf-dlltool"
       - "/home/thehunter101/miniconda3/condabin/xtensa-esp32-elf-dlltool"
       - "/usr/local/sbin/xtensa-esp32-elf-dlltool"
@@ -1189,6 +1273,8 @@ events:
       - "/usr/sbin/xtensa-esp32-elf-dlltool"
       - "/sbin/xtensa-esp32-elf-dlltool"
       - "/bin/xtensa-esp32-elf-dlltool"
+      - "/usr/lib/jvm/default-jdk/bin/xtensa-esp32-elf-dlltool"
+      - "/usr/lib/jvm/default-jre/bin/xtensa-esp32-elf-dlltool"
       - "/home/thehunter101/.dotnet/xtensa-esp32-elf-dlltool"
       - "/home/thehunter101/.dotnet/tools/xtensa-esp32-elf-dlltool"
       - "/opt/neko/xtensa-esp32-elf-dlltool"
@@ -1205,6 +1291,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/dlltool"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/dlltool"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/dlltool"
+      - "/home/thehunter101/.opencode/bin/dlltool"
       - "/home/thehunter101/miniconda3/bin/dlltool"
       - "/home/thehunter101/miniconda3/condabin/dlltool"
       - "/usr/local/sbin/dlltool"
@@ -1213,6 +1300,8 @@ events:
       - "/usr/sbin/dlltool"
       - "/sbin/dlltool"
       - "/bin/dlltool"
+      - "/usr/lib/jvm/default-jdk/bin/dlltool"
+      - "/usr/lib/jvm/default-jre/bin/dlltool"
       - "/home/thehunter101/.dotnet/dlltool"
       - "/home/thehunter101/.dotnet/tools/dlltool"
       - "/opt/neko/dlltool"
@@ -1238,6 +1327,7 @@ events:
         - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin"
         - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin"
         - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools"
+        - "/home/thehunter101/.opencode/bin"
         - "/home/thehunter101/miniconda3/bin"
         - "/home/thehunter101/miniconda3/condabin"
         - "/usr/local/sbin"
@@ -1246,6 +1336,8 @@ events:
         - "/usr/sbin"
         - "/sbin"
         - "/bin"
+        - "/usr/lib/jvm/default-jdk/bin"
+        - "/usr/lib/jvm/default-jre/bin"
         - "/home/thehunter101/.dotnet"
         - "/home/thehunter101/.dotnet/tools"
         - "/opt/neko"
@@ -1284,6 +1376,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/"
+      - "/home/thehunter101/.opencode/bin/"
       - "/home/thehunter101/miniconda3/bin/"
       - "/home/thehunter101/miniconda3/condabin/"
       - "/usr/local/sbin/"
@@ -1292,6 +1385,8 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/bin/"
+      - "/usr/lib/jvm/default-jdk/bin/"
+      - "/usr/lib/jvm/default-jre/bin/"
       - "/home/thehunter101/.dotnet/"
       - "/home/thehunter101/.dotnet/tools/"
       - "/opt/neko/"
@@ -1317,6 +1412,7 @@ events:
         - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin"
         - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin"
         - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools"
+        - "/home/thehunter101/.opencode/bin"
         - "/home/thehunter101/miniconda3/bin"
         - "/home/thehunter101/miniconda3/condabin"
         - "/usr/local/sbin"
@@ -1325,6 +1421,8 @@ events:
         - "/usr/sbin"
         - "/sbin"
         - "/bin"
+        - "/usr/lib/jvm/default-jdk/bin"
+        - "/usr/lib/jvm/default-jre/bin"
         - "/home/thehunter101/.dotnet"
         - "/home/thehunter101/.dotnet/tools"
         - "/opt/neko"
@@ -1363,6 +1461,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/"
+      - "/home/thehunter101/.opencode/bin/"
       - "/home/thehunter101/miniconda3/bin/"
       - "/home/thehunter101/miniconda3/condabin/"
       - "/usr/local/sbin/"
@@ -1371,6 +1470,8 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/bin/"
+      - "/usr/lib/jvm/default-jdk/bin/"
+      - "/usr/lib/jvm/default-jre/bin/"
       - "/home/thehunter101/.dotnet/"
       - "/home/thehunter101/.dotnet/tools/"
       - "/opt/neko/"
@@ -1388,6 +1489,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/xtensa-esp32-elf-tapi"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/xtensa-esp32-elf-tapi"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/xtensa-esp32-elf-tapi"
+      - "/home/thehunter101/.opencode/bin/xtensa-esp32-elf-tapi"
       - "/home/thehunter101/miniconda3/bin/xtensa-esp32-elf-tapi"
       - "/home/thehunter101/miniconda3/condabin/xtensa-esp32-elf-tapi"
       - "/usr/local/sbin/xtensa-esp32-elf-tapi"
@@ -1396,6 +1498,8 @@ events:
       - "/usr/sbin/xtensa-esp32-elf-tapi"
       - "/sbin/xtensa-esp32-elf-tapi"
       - "/bin/xtensa-esp32-elf-tapi"
+      - "/usr/lib/jvm/default-jdk/bin/xtensa-esp32-elf-tapi"
+      - "/usr/lib/jvm/default-jre/bin/xtensa-esp32-elf-tapi"
       - "/home/thehunter101/.dotnet/xtensa-esp32-elf-tapi"
       - "/home/thehunter101/.dotnet/tools/xtensa-esp32-elf-tapi"
       - "/opt/neko/xtensa-esp32-elf-tapi"
@@ -1412,6 +1516,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/tapi"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/tapi"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/tapi"
+      - "/home/thehunter101/.opencode/bin/tapi"
       - "/home/thehunter101/miniconda3/bin/tapi"
       - "/home/thehunter101/miniconda3/condabin/tapi"
       - "/usr/local/sbin/tapi"
@@ -1420,6 +1525,8 @@ events:
       - "/usr/sbin/tapi"
       - "/sbin/tapi"
       - "/bin/tapi"
+      - "/usr/lib/jvm/default-jdk/bin/tapi"
+      - "/usr/lib/jvm/default-jre/bin/tapi"
       - "/home/thehunter101/.dotnet/tapi"
       - "/home/thehunter101/.dotnet/tools/tapi"
       - "/opt/neko/tapi"
@@ -1445,6 +1552,7 @@ events:
         - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin"
         - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin"
         - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools"
+        - "/home/thehunter101/.opencode/bin"
         - "/home/thehunter101/miniconda3/bin"
         - "/home/thehunter101/miniconda3/condabin"
         - "/usr/local/sbin"
@@ -1453,6 +1561,8 @@ events:
         - "/usr/sbin"
         - "/sbin"
         - "/bin"
+        - "/usr/lib/jvm/default-jdk/bin"
+        - "/usr/lib/jvm/default-jre/bin"
         - "/home/thehunter101/.dotnet"
         - "/home/thehunter101/.dotnet/tools"
         - "/opt/neko"
@@ -1493,6 +1603,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/"
+      - "/home/thehunter101/.opencode/bin/"
       - "/home/thehunter101/miniconda3/bin/"
       - "/home/thehunter101/miniconda3/condabin/"
       - "/usr/local/sbin/"
@@ -1501,6 +1612,8 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/bin/"
+      - "/usr/lib/jvm/default-jdk/bin/"
+      - "/usr/lib/jvm/default-jre/bin/"
       - "/home/thehunter101/.dotnet/"
       - "/home/thehunter101/.dotnet/tools/"
       - "/opt/neko/"
@@ -1518,6 +1631,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/xtensa-esp32-elf-gcc-ar-13.2"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/xtensa-esp32-elf-gcc-ar-13.2"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/xtensa-esp32-elf-gcc-ar-13.2"
+      - "/home/thehunter101/.opencode/bin/xtensa-esp32-elf-gcc-ar-13.2"
       - "/home/thehunter101/miniconda3/bin/xtensa-esp32-elf-gcc-ar-13.2"
       - "/home/thehunter101/miniconda3/condabin/xtensa-esp32-elf-gcc-ar-13.2"
       - "/usr/local/sbin/xtensa-esp32-elf-gcc-ar-13.2"
@@ -1526,6 +1640,8 @@ events:
       - "/usr/sbin/xtensa-esp32-elf-gcc-ar-13.2"
       - "/sbin/xtensa-esp32-elf-gcc-ar-13.2"
       - "/bin/xtensa-esp32-elf-gcc-ar-13.2"
+      - "/usr/lib/jvm/default-jdk/bin/xtensa-esp32-elf-gcc-ar-13.2"
+      - "/usr/lib/jvm/default-jre/bin/xtensa-esp32-elf-gcc-ar-13.2"
       - "/home/thehunter101/.dotnet/xtensa-esp32-elf-gcc-ar-13.2"
       - "/home/thehunter101/.dotnet/tools/xtensa-esp32-elf-gcc-ar-13.2"
       - "/opt/neko/xtensa-esp32-elf-gcc-ar-13.2"
@@ -1542,6 +1658,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/xtensa-esp32-elf-gcc-ar-13"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/xtensa-esp32-elf-gcc-ar-13"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/xtensa-esp32-elf-gcc-ar-13"
+      - "/home/thehunter101/.opencode/bin/xtensa-esp32-elf-gcc-ar-13"
       - "/home/thehunter101/miniconda3/bin/xtensa-esp32-elf-gcc-ar-13"
       - "/home/thehunter101/miniconda3/condabin/xtensa-esp32-elf-gcc-ar-13"
       - "/usr/local/sbin/xtensa-esp32-elf-gcc-ar-13"
@@ -1550,6 +1667,8 @@ events:
       - "/usr/sbin/xtensa-esp32-elf-gcc-ar-13"
       - "/sbin/xtensa-esp32-elf-gcc-ar-13"
       - "/bin/xtensa-esp32-elf-gcc-ar-13"
+      - "/usr/lib/jvm/default-jdk/bin/xtensa-esp32-elf-gcc-ar-13"
+      - "/usr/lib/jvm/default-jre/bin/xtensa-esp32-elf-gcc-ar-13"
       - "/home/thehunter101/.dotnet/xtensa-esp32-elf-gcc-ar-13"
       - "/home/thehunter101/.dotnet/tools/xtensa-esp32-elf-gcc-ar-13"
       - "/opt/neko/xtensa-esp32-elf-gcc-ar-13"
@@ -1566,6 +1685,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/xtensa-esp32-elf-gcc-ar13"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/xtensa-esp32-elf-gcc-ar13"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/xtensa-esp32-elf-gcc-ar13"
+      - "/home/thehunter101/.opencode/bin/xtensa-esp32-elf-gcc-ar13"
       - "/home/thehunter101/miniconda3/bin/xtensa-esp32-elf-gcc-ar13"
       - "/home/thehunter101/miniconda3/condabin/xtensa-esp32-elf-gcc-ar13"
       - "/usr/local/sbin/xtensa-esp32-elf-gcc-ar13"
@@ -1574,6 +1694,8 @@ events:
       - "/usr/sbin/xtensa-esp32-elf-gcc-ar13"
       - "/sbin/xtensa-esp32-elf-gcc-ar13"
       - "/bin/xtensa-esp32-elf-gcc-ar13"
+      - "/usr/lib/jvm/default-jdk/bin/xtensa-esp32-elf-gcc-ar13"
+      - "/usr/lib/jvm/default-jre/bin/xtensa-esp32-elf-gcc-ar13"
       - "/home/thehunter101/.dotnet/xtensa-esp32-elf-gcc-ar13"
       - "/home/thehunter101/.dotnet/tools/xtensa-esp32-elf-gcc-ar13"
       - "/opt/neko/xtensa-esp32-elf-gcc-ar13"
@@ -1599,6 +1721,7 @@ events:
         - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin"
         - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin"
         - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools"
+        - "/home/thehunter101/.opencode/bin"
         - "/home/thehunter101/miniconda3/bin"
         - "/home/thehunter101/miniconda3/condabin"
         - "/usr/local/sbin"
@@ -1607,6 +1730,8 @@ events:
         - "/usr/sbin"
         - "/sbin"
         - "/bin"
+        - "/usr/lib/jvm/default-jdk/bin"
+        - "/usr/lib/jvm/default-jre/bin"
         - "/home/thehunter101/.dotnet"
         - "/home/thehunter101/.dotnet/tools"
         - "/opt/neko"
@@ -1647,6 +1772,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/"
+      - "/home/thehunter101/.opencode/bin/"
       - "/home/thehunter101/miniconda3/bin/"
       - "/home/thehunter101/miniconda3/condabin/"
       - "/usr/local/sbin/"
@@ -1655,6 +1781,8 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/bin/"
+      - "/usr/lib/jvm/default-jdk/bin/"
+      - "/usr/lib/jvm/default-jre/bin/"
       - "/home/thehunter101/.dotnet/"
       - "/home/thehunter101/.dotnet/tools/"
       - "/opt/neko/"
@@ -1672,6 +1800,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/xtensa-esp32-elf-gcc-ranlib-13.2"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/xtensa-esp32-elf-gcc-ranlib-13.2"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/xtensa-esp32-elf-gcc-ranlib-13.2"
+      - "/home/thehunter101/.opencode/bin/xtensa-esp32-elf-gcc-ranlib-13.2"
       - "/home/thehunter101/miniconda3/bin/xtensa-esp32-elf-gcc-ranlib-13.2"
       - "/home/thehunter101/miniconda3/condabin/xtensa-esp32-elf-gcc-ranlib-13.2"
       - "/usr/local/sbin/xtensa-esp32-elf-gcc-ranlib-13.2"
@@ -1680,6 +1809,8 @@ events:
       - "/usr/sbin/xtensa-esp32-elf-gcc-ranlib-13.2"
       - "/sbin/xtensa-esp32-elf-gcc-ranlib-13.2"
       - "/bin/xtensa-esp32-elf-gcc-ranlib-13.2"
+      - "/usr/lib/jvm/default-jdk/bin/xtensa-esp32-elf-gcc-ranlib-13.2"
+      - "/usr/lib/jvm/default-jre/bin/xtensa-esp32-elf-gcc-ranlib-13.2"
       - "/home/thehunter101/.dotnet/xtensa-esp32-elf-gcc-ranlib-13.2"
       - "/home/thehunter101/.dotnet/tools/xtensa-esp32-elf-gcc-ranlib-13.2"
       - "/opt/neko/xtensa-esp32-elf-gcc-ranlib-13.2"
@@ -1696,6 +1827,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/xtensa-esp32-elf-gcc-ranlib-13"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/xtensa-esp32-elf-gcc-ranlib-13"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/xtensa-esp32-elf-gcc-ranlib-13"
+      - "/home/thehunter101/.opencode/bin/xtensa-esp32-elf-gcc-ranlib-13"
       - "/home/thehunter101/miniconda3/bin/xtensa-esp32-elf-gcc-ranlib-13"
       - "/home/thehunter101/miniconda3/condabin/xtensa-esp32-elf-gcc-ranlib-13"
       - "/usr/local/sbin/xtensa-esp32-elf-gcc-ranlib-13"
@@ -1704,6 +1836,8 @@ events:
       - "/usr/sbin/xtensa-esp32-elf-gcc-ranlib-13"
       - "/sbin/xtensa-esp32-elf-gcc-ranlib-13"
       - "/bin/xtensa-esp32-elf-gcc-ranlib-13"
+      - "/usr/lib/jvm/default-jdk/bin/xtensa-esp32-elf-gcc-ranlib-13"
+      - "/usr/lib/jvm/default-jre/bin/xtensa-esp32-elf-gcc-ranlib-13"
       - "/home/thehunter101/.dotnet/xtensa-esp32-elf-gcc-ranlib-13"
       - "/home/thehunter101/.dotnet/tools/xtensa-esp32-elf-gcc-ranlib-13"
       - "/opt/neko/xtensa-esp32-elf-gcc-ranlib-13"
@@ -1720,6 +1854,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/xtensa-esp32-elf-gcc-ranlib13"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/xtensa-esp32-elf-gcc-ranlib13"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/xtensa-esp32-elf-gcc-ranlib13"
+      - "/home/thehunter101/.opencode/bin/xtensa-esp32-elf-gcc-ranlib13"
       - "/home/thehunter101/miniconda3/bin/xtensa-esp32-elf-gcc-ranlib13"
       - "/home/thehunter101/miniconda3/condabin/xtensa-esp32-elf-gcc-ranlib13"
       - "/usr/local/sbin/xtensa-esp32-elf-gcc-ranlib13"
@@ -1728,6 +1863,8 @@ events:
       - "/usr/sbin/xtensa-esp32-elf-gcc-ranlib13"
       - "/sbin/xtensa-esp32-elf-gcc-ranlib13"
       - "/bin/xtensa-esp32-elf-gcc-ranlib13"
+      - "/usr/lib/jvm/default-jdk/bin/xtensa-esp32-elf-gcc-ranlib13"
+      - "/usr/lib/jvm/default-jre/bin/xtensa-esp32-elf-gcc-ranlib13"
       - "/home/thehunter101/.dotnet/xtensa-esp32-elf-gcc-ranlib13"
       - "/home/thehunter101/.dotnet/tools/xtensa-esp32-elf-gcc-ranlib13"
       - "/opt/neko/xtensa-esp32-elf-gcc-ranlib13"
@@ -1753,6 +1890,7 @@ events:
         - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin"
         - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin"
         - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools"
+        - "/home/thehunter101/.opencode/bin"
         - "/home/thehunter101/miniconda3/bin"
         - "/home/thehunter101/miniconda3/condabin"
         - "/usr/local/sbin"
@@ -1761,6 +1899,8 @@ events:
         - "/usr/sbin"
         - "/sbin"
         - "/bin"
+        - "/usr/lib/jvm/default-jdk/bin"
+        - "/usr/lib/jvm/default-jre/bin"
         - "/home/thehunter101/.dotnet"
         - "/home/thehunter101/.dotnet/tools"
         - "/opt/neko"
@@ -1798,6 +1938,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/"
+      - "/home/thehunter101/.opencode/bin/"
       - "/home/thehunter101/miniconda3/bin/"
       - "/home/thehunter101/miniconda3/condabin/"
       - "/usr/local/sbin/"
@@ -1806,6 +1947,8 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/bin/"
+      - "/usr/lib/jvm/default-jdk/bin/"
+      - "/usr/lib/jvm/default-jre/bin/"
       - "/home/thehunter101/.dotnet/"
       - "/home/thehunter101/.dotnet/tools/"
       - "/opt/neko/"
@@ -1837,6 +1980,7 @@ events:
         - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin"
         - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin"
         - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools"
+        - "/home/thehunter101/.opencode/bin"
         - "/home/thehunter101/miniconda3/bin"
         - "/home/thehunter101/miniconda3/condabin"
         - "/usr/local/sbin"
@@ -1845,6 +1989,8 @@ events:
         - "/usr/sbin"
         - "/sbin"
         - "/bin"
+        - "/usr/lib/jvm/default-jdk/bin"
+        - "/usr/lib/jvm/default-jre/bin"
         - "/home/thehunter101/.dotnet"
         - "/home/thehunter101/.dotnet/tools"
         - "/opt/neko"
@@ -1897,6 +2043,7 @@ events:
         - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin"
         - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin"
         - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools"
+        - "/home/thehunter101/.opencode/bin"
         - "/home/thehunter101/miniconda3/bin"
         - "/home/thehunter101/miniconda3/condabin"
         - "/usr/local/sbin"
@@ -1905,6 +2052,8 @@ events:
         - "/usr/sbin"
         - "/sbin"
         - "/bin"
+        - "/usr/lib/jvm/default-jdk/bin"
+        - "/usr/lib/jvm/default-jre/bin"
         - "/home/thehunter101/.dotnet"
         - "/home/thehunter101/.dotnet/tools"
         - "/opt/neko"
@@ -1968,6 +2117,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/"
+      - "/home/thehunter101/.opencode/bin/"
       - "/home/thehunter101/miniconda3/bin/"
       - "/home/thehunter101/miniconda3/condabin/"
       - "/usr/local/sbin/"
@@ -1976,6 +2126,8 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/bin/"
+      - "/usr/lib/jvm/default-jdk/bin/"
+      - "/usr/lib/jvm/default-jre/bin/"
       - "/home/thehunter101/.dotnet/"
       - "/home/thehunter101/.dotnet/tools/"
       - "/opt/neko/"
@@ -1993,6 +2145,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/xtensa-esp32-elf-gcc-ar-13.2"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/xtensa-esp32-elf-gcc-ar-13.2"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/xtensa-esp32-elf-gcc-ar-13.2"
+      - "/home/thehunter101/.opencode/bin/xtensa-esp32-elf-gcc-ar-13.2"
       - "/home/thehunter101/miniconda3/bin/xtensa-esp32-elf-gcc-ar-13.2"
       - "/home/thehunter101/miniconda3/condabin/xtensa-esp32-elf-gcc-ar-13.2"
       - "/usr/local/sbin/xtensa-esp32-elf-gcc-ar-13.2"
@@ -2001,6 +2154,8 @@ events:
       - "/usr/sbin/xtensa-esp32-elf-gcc-ar-13.2"
       - "/sbin/xtensa-esp32-elf-gcc-ar-13.2"
       - "/bin/xtensa-esp32-elf-gcc-ar-13.2"
+      - "/usr/lib/jvm/default-jdk/bin/xtensa-esp32-elf-gcc-ar-13.2"
+      - "/usr/lib/jvm/default-jre/bin/xtensa-esp32-elf-gcc-ar-13.2"
       - "/home/thehunter101/.dotnet/xtensa-esp32-elf-gcc-ar-13.2"
       - "/home/thehunter101/.dotnet/tools/xtensa-esp32-elf-gcc-ar-13.2"
       - "/opt/neko/xtensa-esp32-elf-gcc-ar-13.2"
@@ -2017,6 +2172,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/xtensa-esp32-elf-gcc-ar-13"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/xtensa-esp32-elf-gcc-ar-13"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/xtensa-esp32-elf-gcc-ar-13"
+      - "/home/thehunter101/.opencode/bin/xtensa-esp32-elf-gcc-ar-13"
       - "/home/thehunter101/miniconda3/bin/xtensa-esp32-elf-gcc-ar-13"
       - "/home/thehunter101/miniconda3/condabin/xtensa-esp32-elf-gcc-ar-13"
       - "/usr/local/sbin/xtensa-esp32-elf-gcc-ar-13"
@@ -2025,6 +2181,8 @@ events:
       - "/usr/sbin/xtensa-esp32-elf-gcc-ar-13"
       - "/sbin/xtensa-esp32-elf-gcc-ar-13"
       - "/bin/xtensa-esp32-elf-gcc-ar-13"
+      - "/usr/lib/jvm/default-jdk/bin/xtensa-esp32-elf-gcc-ar-13"
+      - "/usr/lib/jvm/default-jre/bin/xtensa-esp32-elf-gcc-ar-13"
       - "/home/thehunter101/.dotnet/xtensa-esp32-elf-gcc-ar-13"
       - "/home/thehunter101/.dotnet/tools/xtensa-esp32-elf-gcc-ar-13"
       - "/opt/neko/xtensa-esp32-elf-gcc-ar-13"
@@ -2041,6 +2199,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/xtensa-esp32-elf-gcc-ar13"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/xtensa-esp32-elf-gcc-ar13"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/xtensa-esp32-elf-gcc-ar13"
+      - "/home/thehunter101/.opencode/bin/xtensa-esp32-elf-gcc-ar13"
       - "/home/thehunter101/miniconda3/bin/xtensa-esp32-elf-gcc-ar13"
       - "/home/thehunter101/miniconda3/condabin/xtensa-esp32-elf-gcc-ar13"
       - "/usr/local/sbin/xtensa-esp32-elf-gcc-ar13"
@@ -2049,6 +2208,8 @@ events:
       - "/usr/sbin/xtensa-esp32-elf-gcc-ar13"
       - "/sbin/xtensa-esp32-elf-gcc-ar13"
       - "/bin/xtensa-esp32-elf-gcc-ar13"
+      - "/usr/lib/jvm/default-jdk/bin/xtensa-esp32-elf-gcc-ar13"
+      - "/usr/lib/jvm/default-jre/bin/xtensa-esp32-elf-gcc-ar13"
       - "/home/thehunter101/.dotnet/xtensa-esp32-elf-gcc-ar13"
       - "/home/thehunter101/.dotnet/tools/xtensa-esp32-elf-gcc-ar13"
       - "/opt/neko/xtensa-esp32-elf-gcc-ar13"
@@ -2074,6 +2235,7 @@ events:
         - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin"
         - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin"
         - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools"
+        - "/home/thehunter101/.opencode/bin"
         - "/home/thehunter101/miniconda3/bin"
         - "/home/thehunter101/miniconda3/condabin"
         - "/usr/local/sbin"
@@ -2082,6 +2244,8 @@ events:
         - "/usr/sbin"
         - "/sbin"
         - "/bin"
+        - "/usr/lib/jvm/default-jdk/bin"
+        - "/usr/lib/jvm/default-jre/bin"
         - "/home/thehunter101/.dotnet"
         - "/home/thehunter101/.dotnet/tools"
         - "/opt/neko"
@@ -2122,6 +2286,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/"
+      - "/home/thehunter101/.opencode/bin/"
       - "/home/thehunter101/miniconda3/bin/"
       - "/home/thehunter101/miniconda3/condabin/"
       - "/usr/local/sbin/"
@@ -2130,6 +2295,8 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/bin/"
+      - "/usr/lib/jvm/default-jdk/bin/"
+      - "/usr/lib/jvm/default-jre/bin/"
       - "/home/thehunter101/.dotnet/"
       - "/home/thehunter101/.dotnet/tools/"
       - "/opt/neko/"
@@ -2147,6 +2314,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/xtensa-esp32-elf-gcc-ranlib-13.2"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/xtensa-esp32-elf-gcc-ranlib-13.2"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/xtensa-esp32-elf-gcc-ranlib-13.2"
+      - "/home/thehunter101/.opencode/bin/xtensa-esp32-elf-gcc-ranlib-13.2"
       - "/home/thehunter101/miniconda3/bin/xtensa-esp32-elf-gcc-ranlib-13.2"
       - "/home/thehunter101/miniconda3/condabin/xtensa-esp32-elf-gcc-ranlib-13.2"
       - "/usr/local/sbin/xtensa-esp32-elf-gcc-ranlib-13.2"
@@ -2155,6 +2323,8 @@ events:
       - "/usr/sbin/xtensa-esp32-elf-gcc-ranlib-13.2"
       - "/sbin/xtensa-esp32-elf-gcc-ranlib-13.2"
       - "/bin/xtensa-esp32-elf-gcc-ranlib-13.2"
+      - "/usr/lib/jvm/default-jdk/bin/xtensa-esp32-elf-gcc-ranlib-13.2"
+      - "/usr/lib/jvm/default-jre/bin/xtensa-esp32-elf-gcc-ranlib-13.2"
       - "/home/thehunter101/.dotnet/xtensa-esp32-elf-gcc-ranlib-13.2"
       - "/home/thehunter101/.dotnet/tools/xtensa-esp32-elf-gcc-ranlib-13.2"
       - "/opt/neko/xtensa-esp32-elf-gcc-ranlib-13.2"
@@ -2171,6 +2341,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/xtensa-esp32-elf-gcc-ranlib-13"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/xtensa-esp32-elf-gcc-ranlib-13"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/xtensa-esp32-elf-gcc-ranlib-13"
+      - "/home/thehunter101/.opencode/bin/xtensa-esp32-elf-gcc-ranlib-13"
       - "/home/thehunter101/miniconda3/bin/xtensa-esp32-elf-gcc-ranlib-13"
       - "/home/thehunter101/miniconda3/condabin/xtensa-esp32-elf-gcc-ranlib-13"
       - "/usr/local/sbin/xtensa-esp32-elf-gcc-ranlib-13"
@@ -2179,6 +2350,8 @@ events:
       - "/usr/sbin/xtensa-esp32-elf-gcc-ranlib-13"
       - "/sbin/xtensa-esp32-elf-gcc-ranlib-13"
       - "/bin/xtensa-esp32-elf-gcc-ranlib-13"
+      - "/usr/lib/jvm/default-jdk/bin/xtensa-esp32-elf-gcc-ranlib-13"
+      - "/usr/lib/jvm/default-jre/bin/xtensa-esp32-elf-gcc-ranlib-13"
       - "/home/thehunter101/.dotnet/xtensa-esp32-elf-gcc-ranlib-13"
       - "/home/thehunter101/.dotnet/tools/xtensa-esp32-elf-gcc-ranlib-13"
       - "/opt/neko/xtensa-esp32-elf-gcc-ranlib-13"
@@ -2195,6 +2368,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/xtensa-esp32-elf-gcc-ranlib13"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/xtensa-esp32-elf-gcc-ranlib13"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/xtensa-esp32-elf-gcc-ranlib13"
+      - "/home/thehunter101/.opencode/bin/xtensa-esp32-elf-gcc-ranlib13"
       - "/home/thehunter101/miniconda3/bin/xtensa-esp32-elf-gcc-ranlib13"
       - "/home/thehunter101/miniconda3/condabin/xtensa-esp32-elf-gcc-ranlib13"
       - "/usr/local/sbin/xtensa-esp32-elf-gcc-ranlib13"
@@ -2203,6 +2377,8 @@ events:
       - "/usr/sbin/xtensa-esp32-elf-gcc-ranlib13"
       - "/sbin/xtensa-esp32-elf-gcc-ranlib13"
       - "/bin/xtensa-esp32-elf-gcc-ranlib13"
+      - "/usr/lib/jvm/default-jdk/bin/xtensa-esp32-elf-gcc-ranlib13"
+      - "/usr/lib/jvm/default-jre/bin/xtensa-esp32-elf-gcc-ranlib13"
       - "/home/thehunter101/.dotnet/xtensa-esp32-elf-gcc-ranlib13"
       - "/home/thehunter101/.dotnet/tools/xtensa-esp32-elf-gcc-ranlib13"
       - "/opt/neko/xtensa-esp32-elf-gcc-ranlib13"
@@ -2228,6 +2404,7 @@ events:
         - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin"
         - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin"
         - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools"
+        - "/home/thehunter101/.opencode/bin"
         - "/home/thehunter101/miniconda3/bin"
         - "/home/thehunter101/miniconda3/condabin"
         - "/usr/local/sbin"
@@ -2236,6 +2413,8 @@ events:
         - "/usr/sbin"
         - "/sbin"
         - "/bin"
+        - "/usr/lib/jvm/default-jdk/bin"
+        - "/usr/lib/jvm/default-jre/bin"
         - "/home/thehunter101/.dotnet"
         - "/home/thehunter101/.dotnet/tools"
         - "/opt/neko"
@@ -2273,6 +2452,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/"
+      - "/home/thehunter101/.opencode/bin/"
       - "/home/thehunter101/miniconda3/bin/"
       - "/home/thehunter101/miniconda3/condabin/"
       - "/usr/local/sbin/"
@@ -2281,6 +2461,8 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/bin/"
+      - "/usr/lib/jvm/default-jdk/bin/"
+      - "/usr/lib/jvm/default-jre/bin/"
       - "/home/thehunter101/.dotnet/"
       - "/home/thehunter101/.dotnet/tools/"
       - "/opt/neko/"
@@ -2312,6 +2494,7 @@ events:
         - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin"
         - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin"
         - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools"
+        - "/home/thehunter101/.opencode/bin"
         - "/home/thehunter101/miniconda3/bin"
         - "/home/thehunter101/miniconda3/condabin"
         - "/usr/local/sbin"
@@ -2320,6 +2503,8 @@ events:
         - "/usr/sbin"
         - "/sbin"
         - "/bin"
+        - "/usr/lib/jvm/default-jdk/bin"
+        - "/usr/lib/jvm/default-jre/bin"
         - "/home/thehunter101/.dotnet"
         - "/home/thehunter101/.dotnet/tools"
         - "/opt/neko"
@@ -2374,6 +2559,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/"
+      - "/home/thehunter101/.opencode/bin/"
       - "/home/thehunter101/miniconda3/bin/"
       - "/home/thehunter101/miniconda3/condabin/"
       - "/usr/local/sbin/"
@@ -2382,6 +2568,8 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/bin/"
+      - "/usr/lib/jvm/default-jdk/bin/"
+      - "/usr/lib/jvm/default-jre/bin/"
       - "/home/thehunter101/.dotnet/"
       - "/home/thehunter101/.dotnet/tools/"
       - "/opt/neko/"
@@ -2399,6 +2587,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/xtensa-esp32-elf-gcc-ar-"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/xtensa-esp32-elf-gcc-ar-"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/xtensa-esp32-elf-gcc-ar-"
+      - "/home/thehunter101/.opencode/bin/xtensa-esp32-elf-gcc-ar-"
       - "/home/thehunter101/miniconda3/bin/xtensa-esp32-elf-gcc-ar-"
       - "/home/thehunter101/miniconda3/condabin/xtensa-esp32-elf-gcc-ar-"
       - "/usr/local/sbin/xtensa-esp32-elf-gcc-ar-"
@@ -2407,6 +2596,8 @@ events:
       - "/usr/sbin/xtensa-esp32-elf-gcc-ar-"
       - "/sbin/xtensa-esp32-elf-gcc-ar-"
       - "/bin/xtensa-esp32-elf-gcc-ar-"
+      - "/usr/lib/jvm/default-jdk/bin/xtensa-esp32-elf-gcc-ar-"
+      - "/usr/lib/jvm/default-jre/bin/xtensa-esp32-elf-gcc-ar-"
       - "/home/thehunter101/.dotnet/xtensa-esp32-elf-gcc-ar-"
       - "/home/thehunter101/.dotnet/tools/xtensa-esp32-elf-gcc-ar-"
       - "/opt/neko/xtensa-esp32-elf-gcc-ar-"
@@ -2423,6 +2614,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/xtensa-esp32-elf-gcc-ar-"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/xtensa-esp32-elf-gcc-ar-"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/xtensa-esp32-elf-gcc-ar-"
+      - "/home/thehunter101/.opencode/bin/xtensa-esp32-elf-gcc-ar-"
       - "/home/thehunter101/miniconda3/bin/xtensa-esp32-elf-gcc-ar-"
       - "/home/thehunter101/miniconda3/condabin/xtensa-esp32-elf-gcc-ar-"
       - "/usr/local/sbin/xtensa-esp32-elf-gcc-ar-"
@@ -2431,6 +2623,8 @@ events:
       - "/usr/sbin/xtensa-esp32-elf-gcc-ar-"
       - "/sbin/xtensa-esp32-elf-gcc-ar-"
       - "/bin/xtensa-esp32-elf-gcc-ar-"
+      - "/usr/lib/jvm/default-jdk/bin/xtensa-esp32-elf-gcc-ar-"
+      - "/usr/lib/jvm/default-jre/bin/xtensa-esp32-elf-gcc-ar-"
       - "/home/thehunter101/.dotnet/xtensa-esp32-elf-gcc-ar-"
       - "/home/thehunter101/.dotnet/tools/xtensa-esp32-elf-gcc-ar-"
       - "/opt/neko/xtensa-esp32-elf-gcc-ar-"
@@ -2456,6 +2650,7 @@ events:
         - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin"
         - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin"
         - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools"
+        - "/home/thehunter101/.opencode/bin"
         - "/home/thehunter101/miniconda3/bin"
         - "/home/thehunter101/miniconda3/condabin"
         - "/usr/local/sbin"
@@ -2464,6 +2659,8 @@ events:
         - "/usr/sbin"
         - "/sbin"
         - "/bin"
+        - "/usr/lib/jvm/default-jdk/bin"
+        - "/usr/lib/jvm/default-jre/bin"
         - "/home/thehunter101/.dotnet"
         - "/home/thehunter101/.dotnet/tools"
         - "/opt/neko"
@@ -2504,6 +2701,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/"
+      - "/home/thehunter101/.opencode/bin/"
       - "/home/thehunter101/miniconda3/bin/"
       - "/home/thehunter101/miniconda3/condabin/"
       - "/usr/local/sbin/"
@@ -2512,6 +2710,8 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/bin/"
+      - "/usr/lib/jvm/default-jdk/bin/"
+      - "/usr/lib/jvm/default-jre/bin/"
       - "/home/thehunter101/.dotnet/"
       - "/home/thehunter101/.dotnet/tools/"
       - "/opt/neko/"
@@ -2529,6 +2729,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/xtensa-esp32-elf-gcc-ranlib-"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/xtensa-esp32-elf-gcc-ranlib-"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/xtensa-esp32-elf-gcc-ranlib-"
+      - "/home/thehunter101/.opencode/bin/xtensa-esp32-elf-gcc-ranlib-"
       - "/home/thehunter101/miniconda3/bin/xtensa-esp32-elf-gcc-ranlib-"
       - "/home/thehunter101/miniconda3/condabin/xtensa-esp32-elf-gcc-ranlib-"
       - "/usr/local/sbin/xtensa-esp32-elf-gcc-ranlib-"
@@ -2537,6 +2738,8 @@ events:
       - "/usr/sbin/xtensa-esp32-elf-gcc-ranlib-"
       - "/sbin/xtensa-esp32-elf-gcc-ranlib-"
       - "/bin/xtensa-esp32-elf-gcc-ranlib-"
+      - "/usr/lib/jvm/default-jdk/bin/xtensa-esp32-elf-gcc-ranlib-"
+      - "/usr/lib/jvm/default-jre/bin/xtensa-esp32-elf-gcc-ranlib-"
       - "/home/thehunter101/.dotnet/xtensa-esp32-elf-gcc-ranlib-"
       - "/home/thehunter101/.dotnet/tools/xtensa-esp32-elf-gcc-ranlib-"
       - "/opt/neko/xtensa-esp32-elf-gcc-ranlib-"
@@ -2553,6 +2756,7 @@ events:
       - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin/xtensa-esp32-elf-gcc-ranlib-"
       - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin/xtensa-esp32-elf-gcc-ranlib-"
       - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools/xtensa-esp32-elf-gcc-ranlib-"
+      - "/home/thehunter101/.opencode/bin/xtensa-esp32-elf-gcc-ranlib-"
       - "/home/thehunter101/miniconda3/bin/xtensa-esp32-elf-gcc-ranlib-"
       - "/home/thehunter101/miniconda3/condabin/xtensa-esp32-elf-gcc-ranlib-"
       - "/usr/local/sbin/xtensa-esp32-elf-gcc-ranlib-"
@@ -2561,6 +2765,8 @@ events:
       - "/usr/sbin/xtensa-esp32-elf-gcc-ranlib-"
       - "/sbin/xtensa-esp32-elf-gcc-ranlib-"
       - "/bin/xtensa-esp32-elf-gcc-ranlib-"
+      - "/usr/lib/jvm/default-jdk/bin/xtensa-esp32-elf-gcc-ranlib-"
+      - "/usr/lib/jvm/default-jre/bin/xtensa-esp32-elf-gcc-ranlib-"
       - "/home/thehunter101/.dotnet/xtensa-esp32-elf-gcc-ranlib-"
       - "/home/thehunter101/.dotnet/tools/xtensa-esp32-elf-gcc-ranlib-"
       - "/opt/neko/xtensa-esp32-elf-gcc-ranlib-"
@@ -2586,6 +2792,7 @@ events:
         - "/home/thehunter101/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260304/openocd-esp32/bin"
         - "/home/thehunter101/.espressif/python_env/idf5.2_py3.13_env/bin"
         - "/home/thehunter101/Documents/esp-idf-v5.2.7/tools"
+        - "/home/thehunter101/.opencode/bin"
         - "/home/thehunter101/miniconda3/bin"
         - "/home/thehunter101/miniconda3/condabin"
         - "/usr/local/sbin"
@@ -2594,6 +2801,8 @@ events:
         - "/usr/sbin"
         - "/sbin"
         - "/bin"
+        - "/usr/lib/jvm/default-jdk/bin"
+        - "/usr/lib/jvm/default-jre/bin"
         - "/home/thehunter101/.dotnet"
         - "/home/thehunter101/.dotnet/tools"
         - "/opt/neko"
@@ -2609,8 +2818,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-MwhW4k"
-      binary: "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-MwhW4k"
+      source: "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-K4Foyz"
+      binary: "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-K4Foyz"
     cmakeVariables:
       CMAKE_C_FLAGS: "-mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy"
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -2620,10 +2829,10 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-MwhW4k'
+        Change Dir: '/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-K4Foyz'
         
-        Run Build Command(s): /usr/bin/ninja -v cmTC_e41de
-        [1/2] /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc   -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy    -v -o CMakeFiles/cmTC_e41de.dir/CMakeCCompilerABI.c.obj -c /usr/share/cmake-4.2/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /usr/bin/ninja -v cmTC_16f0a
+        [1/2] /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc   -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy    -v -o CMakeFiles/cmTC_16f0a.dir/CMakeCCompilerABI.c.obj -c /usr/share/cmake-4.2/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp-elf-gcc
         Target: xtensa-esp-elf
@@ -2631,8 +2840,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 13.2.0 (crosstool-NG esp-13.2.0_20250707) 
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_e41de.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_e41de.dir/'
-         /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/cc1 -quiet -v -imultilib esp32 -iprefix /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/ -isysroot /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf /usr/share/cmake-4.2/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_e41de.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mdynconfig=xtensa_esp32.so -mlongcalls -Wno-frame-address -version -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o /tmp/ccjhhG8n.s
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_16f0a.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_16f0a.dir/'
+         /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/cc1 -quiet -v -imultilib esp32 -iprefix /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/ -isysroot /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf /usr/share/cmake-4.2/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_16f0a.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mdynconfig=xtensa_esp32.so -mlongcalls -Wno-frame-address -version -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o /tmp/cctGHZjX.s
         GNU C17 (crosstool-NG esp-13.2.0_20250707) version 13.2.0 (xtensa-esp-elf)
         	compiled by GNU C version 4.9.2, GMP version 6.2.1, MPFR version 4.2.1, MPC version 1.2.1, isl version isl-0.26-GMP
         
@@ -2649,12 +2858,12 @@ events:
          /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/include
         End of search list.
         Compiler executable checksum: bf6e4f381f6eced3fd7e4a00baedeb5c
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_e41de.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_e41de.dir/'
-         /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/as --traditional-format --longcalls --dynconfig=xtensa_esp32.so -o CMakeFiles/cmTC_e41de.dir/CMakeCCompilerABI.c.obj /tmp/ccjhhG8n.s
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_16f0a.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_16f0a.dir/'
+         /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/as --traditional-format --longcalls --dynconfig=xtensa_esp32.so -o CMakeFiles/cmTC_16f0a.dir/CMakeCCompilerABI.c.obj /tmp/cctGHZjX.s
         COMPILER_PATH=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/
         LIBRARY_PATH=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_e41de.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_e41de.dir/CMakeCCompilerABI.c.'
-        [2/2] : && /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -v CMakeFiles/cmTC_e41de.dir/CMakeCCompilerABI.c.obj -o cmTC_e41de   && :
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_16f0a.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_16f0a.dir/CMakeCCompilerABI.c.'
+        [2/2] : && /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -v CMakeFiles/cmTC_16f0a.dir/CMakeCCompilerABI.c.obj -o cmTC_16f0a   && :
         Using built-in specs.
         COLLECT_GCC=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp-elf-gcc
         COLLECT_LTO_WRAPPER=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/lto-wrapper
@@ -2665,9 +2874,9 @@ events:
         gcc version 13.2.0 (crosstool-NG esp-13.2.0_20250707) 
         COMPILER_PATH=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/
         LIBRARY_PATH=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_e41de' '-dumpdir' 'cmTC_e41de.'
-         /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/collect2 -plugin /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/liblto_plugin.so -plugin-opt=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc7jlWSs.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32.so -o cmTC_e41de /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32/crt0.o /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crti.o /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtbegin.o -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib CMakeFiles/cmTC_e41de.dir/CMakeCCompilerABI.c.obj -lgcc -lc -lnosys -lc -lgcc /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtend.o /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtn.o
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_e41de' '-dumpdir' 'cmTC_e41de.'
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_16f0a' '-dumpdir' 'cmTC_16f0a.'
+         /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/collect2 -plugin /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/liblto_plugin.so -plugin-opt=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccvCQeQV.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32.so -o cmTC_16f0a /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32/crt0.o /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crti.o /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtbegin.o -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib CMakeFiles/cmTC_16f0a.dir/CMakeCCompilerABI.c.obj -lgcc -lc -lnosys -lc -lgcc /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtend.o /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtn.o
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_16f0a' '-dumpdir' 'cmTC_16f0a.'
         
       exitCode: 0
   -
@@ -2702,10 +2911,10 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-MwhW4k']
+        ignore line: [Change Dir: '/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-K4Foyz']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/ninja -v cmTC_e41de]
-        ignore line: [[1/2] /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc   -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy    -v -o CMakeFiles/cmTC_e41de.dir/CMakeCCompilerABI.c.obj -c /usr/share/cmake-4.2/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /usr/bin/ninja -v cmTC_16f0a]
+        ignore line: [[1/2] /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc   -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy    -v -o CMakeFiles/cmTC_16f0a.dir/CMakeCCompilerABI.c.obj -c /usr/share/cmake-4.2/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp-elf-gcc]
         ignore line: [Target: xtensa-esp-elf]
@@ -2713,8 +2922,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 13.2.0 (crosstool-NG esp-13.2.0_20250707) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_e41de.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_e41de.dir/']
-        ignore line: [ /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/cc1 -quiet -v -imultilib esp32 -iprefix /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/ -isysroot /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf /usr/share/cmake-4.2/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_e41de.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mdynconfig=xtensa_esp32.so -mlongcalls -Wno-frame-address -version -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o /tmp/ccjhhG8n.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_16f0a.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_16f0a.dir/']
+        ignore line: [ /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/cc1 -quiet -v -imultilib esp32 -iprefix /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/ -isysroot /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf /usr/share/cmake-4.2/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_16f0a.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mdynconfig=xtensa_esp32.so -mlongcalls -Wno-frame-address -version -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o /tmp/cctGHZjX.s]
         ignore line: [GNU C17 (crosstool-NG esp-13.2.0_20250707) version 13.2.0 (xtensa-esp-elf)]
         ignore line: [	compiled by GNU C version 4.9.2  GMP version 6.2.1  MPFR version 4.2.1  MPC version 1.2.1  isl version isl-0.26-GMP]
         ignore line: []
@@ -2731,12 +2940,12 @@ events:
         ignore line: [ /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: bf6e4f381f6eced3fd7e4a00baedeb5c]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_e41de.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_e41de.dir/']
-        ignore line: [ /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/as --traditional-format --longcalls --dynconfig=xtensa_esp32.so -o CMakeFiles/cmTC_e41de.dir/CMakeCCompilerABI.c.obj /tmp/ccjhhG8n.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_16f0a.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_16f0a.dir/']
+        ignore line: [ /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/as --traditional-format --longcalls --dynconfig=xtensa_esp32.so -o CMakeFiles/cmTC_16f0a.dir/CMakeCCompilerABI.c.obj /tmp/cctGHZjX.s]
         ignore line: [COMPILER_PATH=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/]
         ignore line: [LIBRARY_PATH=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_e41de.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_e41de.dir/CMakeCCompilerABI.c.']
-        ignore line: [[2/2] : && /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -v CMakeFiles/cmTC_e41de.dir/CMakeCCompilerABI.c.obj -o cmTC_e41de   && :]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_16f0a.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_16f0a.dir/CMakeCCompilerABI.c.']
+        ignore line: [[2/2] : && /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -v CMakeFiles/cmTC_16f0a.dir/CMakeCCompilerABI.c.obj -o cmTC_16f0a   && :]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp-elf-gcc]
         ignore line: [COLLECT_LTO_WRAPPER=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/lto-wrapper]
@@ -2747,13 +2956,13 @@ events:
         ignore line: [gcc version 13.2.0 (crosstool-NG esp-13.2.0_20250707) ]
         ignore line: [COMPILER_PATH=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/]
         ignore line: [LIBRARY_PATH=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_e41de' '-dumpdir' 'cmTC_e41de.']
-        link line: [ /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/collect2 -plugin /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/liblto_plugin.so -plugin-opt=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc7jlWSs.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32.so -o cmTC_e41de /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32/crt0.o /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crti.o /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtbegin.o -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib CMakeFiles/cmTC_e41de.dir/CMakeCCompilerABI.c.obj -lgcc -lc -lnosys -lc -lgcc /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtend.o /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_16f0a' '-dumpdir' 'cmTC_16f0a.']
+        link line: [ /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/collect2 -plugin /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/liblto_plugin.so -plugin-opt=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccvCQeQV.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32.so -o cmTC_16f0a /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32/crt0.o /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crti.o /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtbegin.o -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib CMakeFiles/cmTC_16f0a.dir/CMakeCCompilerABI.c.obj -lgcc -lc -lnosys -lc -lgcc /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtend.o /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtn.o]
           arg [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/cc7jlWSs.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccvCQeQV.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
           arg [-plugin-opt=-pass-through=-lnosys] ==> ignore
@@ -2762,7 +2971,7 @@ events:
           arg [--sysroot=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf] ==> ignore
           arg [--dynconfig=xtensa_esp32.so] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_e41de] ==> ignore
+          arg [cmTC_16f0a] ==> ignore
           arg [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32/crt0.o] ==> obj [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32/crt0.o]
           arg [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crti.o] ==> obj [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crti.o]
           arg [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtbegin.o] ==> obj [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtbegin.o]
@@ -2774,7 +2983,7 @@ events:
           arg [-L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib] ==> dir [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib]
           arg [-L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib] ==> dir [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib]
           arg [-L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib] ==> dir [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib]
-          arg [CMakeFiles/cmTC_e41de.dir/CMakeCCompilerABI.c.obj] ==> ignore
+          arg [CMakeFiles/cmTC_16f0a.dir/CMakeCCompilerABI.c.obj] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [-lc] ==> lib [c]
           arg [-lnosys] ==> lib [nosys]
@@ -2782,7 +2991,7 @@ events:
           arg [-lgcc] ==> lib [gcc]
           arg [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtend.o] ==> obj [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtend.o]
           arg [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtn.o] ==> obj [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtn.o]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_e41de' '-dumpdir' 'cmTC_e41de.']
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_16f0a' '-dumpdir' 'cmTC_16f0a.']
         ignore line: []
         ignore line: []
         collapse obj [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32/crt0.o] ==> [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/xtensa-esp-elf/lib/esp32/crt0.o]
@@ -2814,8 +3023,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-AAWGGU"
-      binary: "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-AAWGGU"
+      source: "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-ihi4ID"
+      binary: "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-ihi4ID"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "-mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -2826,10 +3035,10 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-AAWGGU'
+        Change Dir: '/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-ihi4ID'
         
-        Run Build Command(s): /usr/bin/ninja -v cmTC_14f4f
-        [1/2] /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-g++   -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy    -v -o CMakeFiles/cmTC_14f4f.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/ninja -v cmTC_9d680
+        [1/2] /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-g++   -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy    -v -o CMakeFiles/cmTC_9d680.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp-elf-g++
         Target: xtensa-esp-elf
@@ -2837,8 +3046,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 13.2.0 (crosstool-NG esp-13.2.0_20250707) 
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_14f4f.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_14f4f.dir/'
-         /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/cc1plus -quiet -v -imultilib esp32 -iprefix /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/ -isysroot /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_14f4f.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mdynconfig=xtensa_esp32.so -mlongcalls -Wno-frame-address -version -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o /tmp/cczyLWN1.s
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_9d680.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_9d680.dir/'
+         /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/cc1plus -quiet -v -imultilib esp32 -iprefix /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/ -isysroot /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_9d680.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mdynconfig=xtensa_esp32.so -mlongcalls -Wno-frame-address -version -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o /tmp/ccpqirba.s
         GNU C++17 (crosstool-NG esp-13.2.0_20250707) version 13.2.0 (xtensa-esp-elf)
         	compiled by GNU C version 4.9.2, GMP version 6.2.1, MPFR version 4.2.1, MPC version 1.2.1, isl version isl-0.26-GMP
         
@@ -2861,12 +3070,12 @@ events:
          /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/include
         End of search list.
         Compiler executable checksum: 6be9d76bd920418c6cdadbfbbb13a8b7
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_14f4f.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_14f4f.dir/'
-         /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/as --traditional-format --longcalls --dynconfig=xtensa_esp32.so -o CMakeFiles/cmTC_14f4f.dir/CMakeCXXCompilerABI.cpp.obj /tmp/cczyLWN1.s
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_9d680.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_9d680.dir/'
+         /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/as --traditional-format --longcalls --dynconfig=xtensa_esp32.so -o CMakeFiles/cmTC_9d680.dir/CMakeCXXCompilerABI.cpp.obj /tmp/ccpqirba.s
         COMPILER_PATH=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/
         LIBRARY_PATH=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_14f4f.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_14f4f.dir/CMakeCXXCompilerABI.cpp.'
-        [2/2] : && /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-g++ -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -v CMakeFiles/cmTC_14f4f.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_14f4f   && :
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_9d680.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_9d680.dir/CMakeCXXCompilerABI.cpp.'
+        [2/2] : && /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-g++ -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -v CMakeFiles/cmTC_9d680.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_9d680   && :
         Using built-in specs.
         COLLECT_GCC=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp-elf-g++
         COLLECT_LTO_WRAPPER=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/lto-wrapper
@@ -2877,9 +3086,9 @@ events:
         gcc version 13.2.0 (crosstool-NG esp-13.2.0_20250707) 
         COMPILER_PATH=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/
         LIBRARY_PATH=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_14f4f' '-dumpdir' 'cmTC_14f4f.'
-         /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/collect2 -plugin /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/liblto_plugin.so -plugin-opt=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccgYzgB2.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32.so -o cmTC_14f4f /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32/crt0.o /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crti.o /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtbegin.o -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib CMakeFiles/cmTC_14f4f.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm -lgcc -lc -lnosys -lc -lgcc /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtend.o /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtn.o
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_14f4f' '-dumpdir' 'cmTC_14f4f.'
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_9d680' '-dumpdir' 'cmTC_9d680.'
+         /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/collect2 -plugin /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/liblto_plugin.so -plugin-opt=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccie2Sj6.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32.so -o cmTC_9d680 /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32/crt0.o /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crti.o /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtbegin.o -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib CMakeFiles/cmTC_9d680.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm -lgcc -lc -lnosys -lc -lgcc /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtend.o /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtn.o
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_9d680' '-dumpdir' 'cmTC_9d680.'
         
       exitCode: 0
   -
@@ -2920,10 +3129,10 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-AAWGGU']
+        ignore line: [Change Dir: '/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-ihi4ID']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/ninja -v cmTC_14f4f]
-        ignore line: [[1/2] /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-g++   -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy    -v -o CMakeFiles/cmTC_14f4f.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/ninja -v cmTC_9d680]
+        ignore line: [[1/2] /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-g++   -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy    -v -o CMakeFiles/cmTC_9d680.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp-elf-g++]
         ignore line: [Target: xtensa-esp-elf]
@@ -2931,8 +3140,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 13.2.0 (crosstool-NG esp-13.2.0_20250707) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_14f4f.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_14f4f.dir/']
-        ignore line: [ /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/cc1plus -quiet -v -imultilib esp32 -iprefix /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/ -isysroot /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_14f4f.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mdynconfig=xtensa_esp32.so -mlongcalls -Wno-frame-address -version -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o /tmp/cczyLWN1.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_9d680.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_9d680.dir/']
+        ignore line: [ /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/cc1plus -quiet -v -imultilib esp32 -iprefix /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/ -isysroot /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_9d680.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mdynconfig=xtensa_esp32.so -mlongcalls -Wno-frame-address -version -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o /tmp/ccpqirba.s]
         ignore line: [GNU C++17 (crosstool-NG esp-13.2.0_20250707) version 13.2.0 (xtensa-esp-elf)]
         ignore line: [	compiled by GNU C version 4.9.2  GMP version 6.2.1  MPFR version 4.2.1  MPC version 1.2.1  isl version isl-0.26-GMP]
         ignore line: []
@@ -2955,12 +3164,12 @@ events:
         ignore line: [ /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 6be9d76bd920418c6cdadbfbbb13a8b7]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_14f4f.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_14f4f.dir/']
-        ignore line: [ /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/as --traditional-format --longcalls --dynconfig=xtensa_esp32.so -o CMakeFiles/cmTC_14f4f.dir/CMakeCXXCompilerABI.cpp.obj /tmp/cczyLWN1.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_9d680.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_9d680.dir/']
+        ignore line: [ /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/as --traditional-format --longcalls --dynconfig=xtensa_esp32.so -o CMakeFiles/cmTC_9d680.dir/CMakeCXXCompilerABI.cpp.obj /tmp/ccpqirba.s]
         ignore line: [COMPILER_PATH=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/]
         ignore line: [LIBRARY_PATH=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_14f4f.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_14f4f.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [[2/2] : && /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-g++ -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -v CMakeFiles/cmTC_14f4f.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_14f4f   && :]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_9d680.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_9d680.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [[2/2] : && /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-g++ -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -v CMakeFiles/cmTC_9d680.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_9d680   && :]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp-elf-g++]
         ignore line: [COLLECT_LTO_WRAPPER=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/lto-wrapper]
@@ -2971,13 +3180,13 @@ events:
         ignore line: [gcc version 13.2.0 (crosstool-NG esp-13.2.0_20250707) ]
         ignore line: [COMPILER_PATH=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/]
         ignore line: [LIBRARY_PATH=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_14f4f' '-dumpdir' 'cmTC_14f4f.']
-        link line: [ /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/collect2 -plugin /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/liblto_plugin.so -plugin-opt=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccgYzgB2.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32.so -o cmTC_14f4f /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32/crt0.o /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crti.o /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtbegin.o -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib CMakeFiles/cmTC_14f4f.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm -lgcc -lc -lnosys -lc -lgcc /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtend.o /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_9d680' '-dumpdir' 'cmTC_9d680.']
+        link line: [ /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/collect2 -plugin /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/liblto_plugin.so -plugin-opt=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccie2Sj6.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32.so -o cmTC_9d680 /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32/crt0.o /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crti.o /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtbegin.o -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0 -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib CMakeFiles/cmTC_9d680.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm -lgcc -lc -lnosys -lc -lgcc /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtend.o /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtn.o]
           arg [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/13.2.0/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccgYzgB2.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccie2Sj6.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
           arg [-plugin-opt=-pass-through=-lnosys] ==> ignore
@@ -2986,7 +3195,7 @@ events:
           arg [--sysroot=/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf] ==> ignore
           arg [--dynconfig=xtensa_esp32.so] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_14f4f] ==> ignore
+          arg [cmTC_9d680] ==> ignore
           arg [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32/crt0.o] ==> obj [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32/crt0.o]
           arg [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crti.o] ==> obj [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crti.o]
           arg [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtbegin.o] ==> obj [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtbegin.o]
@@ -2998,7 +3207,7 @@ events:
           arg [-L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib] ==> dir [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib]
           arg [-L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib] ==> dir [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/lib]
           arg [-L/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib] ==> dir [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib]
-          arg [CMakeFiles/cmTC_14f4f.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+          arg [CMakeFiles/cmTC_9d680.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc] ==> lib [gcc]
@@ -3008,7 +3217,7 @@ events:
           arg [-lgcc] ==> lib [gcc]
           arg [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtend.o] ==> obj [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtend.o]
           arg [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtn.o] ==> obj [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/esp32/crtn.o]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_14f4f' '-dumpdir' 'cmTC_14f4f.']
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_9d680' '-dumpdir' 'cmTC_9d680.']
         ignore line: []
         ignore line: []
         collapse obj [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/lib/esp32/crt0.o] ==> [/home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/xtensa-esp-elf/lib/esp32/crt0.o]
@@ -3039,8 +3248,8 @@ events:
     checks:
       - "Looking for sys/types.h"
     directories:
-      source: "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-UTfHz6"
-      binary: "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-UTfHz6"
+      source: "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-iDFj9p"
+      binary: "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-iDFj9p"
     cmakeVariables:
       CMAKE_C_FLAGS: "-mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy"
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -3050,11 +3259,11 @@ events:
       variable: "HAVE_SYS_TYPES_H"
       cached: true
       stdout: |
-        Change Dir: '/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-UTfHz6'
+        Change Dir: '/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-iDFj9p'
         
-        Run Build Command(s): /usr/bin/ninja -v cmTC_a3c5e
-        [1/2] /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc   -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o CMakeFiles/cmTC_a3c5e.dir/CheckIncludeFile.c.obj -c /home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-UTfHz6/CheckIncludeFile.c
-        [2/2] : && /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy  CMakeFiles/cmTC_a3c5e.dir/CheckIncludeFile.c.obj -o cmTC_a3c5e   && :
+        Run Build Command(s): /usr/bin/ninja -v cmTC_2f069
+        [1/2] /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc   -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o CMakeFiles/cmTC_2f069.dir/CheckIncludeFile.c.obj -c /home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-iDFj9p/CheckIncludeFile.c
+        [2/2] : && /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy  CMakeFiles/cmTC_2f069.dir/CheckIncludeFile.c.obj -o cmTC_2f069   && :
         
       exitCode: 0
   -
@@ -3066,8 +3275,8 @@ events:
     checks:
       - "Looking for stdint.h"
     directories:
-      source: "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-8pYbfX"
-      binary: "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-8pYbfX"
+      source: "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-h3D0Fv"
+      binary: "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-h3D0Fv"
     cmakeVariables:
       CMAKE_C_FLAGS: "-mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy"
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -3077,11 +3286,11 @@ events:
       variable: "HAVE_STDINT_H"
       cached: true
       stdout: |
-        Change Dir: '/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-8pYbfX'
+        Change Dir: '/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-h3D0Fv'
         
-        Run Build Command(s): /usr/bin/ninja -v cmTC_60115
-        [1/2] /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc   -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o CMakeFiles/cmTC_60115.dir/CheckIncludeFile.c.obj -c /home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-8pYbfX/CheckIncludeFile.c
-        [2/2] : && /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy  CMakeFiles/cmTC_60115.dir/CheckIncludeFile.c.obj -o cmTC_60115   && :
+        Run Build Command(s): /usr/bin/ninja -v cmTC_b5538
+        [1/2] /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc   -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o CMakeFiles/cmTC_b5538.dir/CheckIncludeFile.c.obj -c /home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-h3D0Fv/CheckIncludeFile.c
+        [2/2] : && /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy  CMakeFiles/cmTC_b5538.dir/CheckIncludeFile.c.obj -o cmTC_b5538   && :
         
       exitCode: 0
   -
@@ -3093,8 +3302,8 @@ events:
     checks:
       - "Looking for stddef.h"
     directories:
-      source: "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-IUK2rA"
-      binary: "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-IUK2rA"
+      source: "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-myX8J6"
+      binary: "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-myX8J6"
     cmakeVariables:
       CMAKE_C_FLAGS: "-mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy"
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -3104,11 +3313,11 @@ events:
       variable: "HAVE_STDDEF_H"
       cached: true
       stdout: |
-        Change Dir: '/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-IUK2rA'
+        Change Dir: '/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-myX8J6'
         
-        Run Build Command(s): /usr/bin/ninja -v cmTC_44d59
-        [1/2] /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc   -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o CMakeFiles/cmTC_44d59.dir/CheckIncludeFile.c.obj -c /home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-IUK2rA/CheckIncludeFile.c
-        [2/2] : && /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy  CMakeFiles/cmTC_44d59.dir/CheckIncludeFile.c.obj -o cmTC_44d59   && :
+        Run Build Command(s): /usr/bin/ninja -v cmTC_cd99c
+        [1/2] /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc   -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o CMakeFiles/cmTC_cd99c.dir/CheckIncludeFile.c.obj -c /home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-myX8J6/CheckIncludeFile.c
+        [2/2] : && /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy  CMakeFiles/cmTC_cd99c.dir/CheckIncludeFile.c.obj -o cmTC_cd99c   && :
         
       exitCode: 0
   -
@@ -3120,8 +3329,8 @@ events:
     checks:
       - "Check size of time_t"
     directories:
-      source: "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-CNKocO"
-      binary: "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-CNKocO"
+      source: "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-Ktga9P"
+      binary: "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-Ktga9P"
     cmakeVariables:
       CMAKE_C_FLAGS: "-mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy"
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -3131,11 +3340,11 @@ events:
       variable: "HAVE_TIME_T_SIZE"
       cached: true
       stdout: |
-        Change Dir: '/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-CNKocO'
+        Change Dir: '/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-Ktga9P'
         
-        Run Build Command(s): /usr/bin/ninja -v cmTC_6e62f
-        [1/2] /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc   -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o CMakeFiles/cmTC_6e62f.dir/TIME_T_SIZE.c.obj -c /home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-CNKocO/TIME_T_SIZE.c
-        [2/2] : && /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy  CMakeFiles/cmTC_6e62f.dir/TIME_T_SIZE.c.obj -o cmTC_6e62f   && :
+        Run Build Command(s): /usr/bin/ninja -v cmTC_7efcf
+        [1/2] /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc   -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o CMakeFiles/cmTC_7efcf.dir/TIME_T_SIZE.c.obj -c /home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-Ktga9P/TIME_T_SIZE.c
+        [2/2] : && /home/thehunter101/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20250707/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy  CMakeFiles/cmTC_7efcf.dir/TIME_T_SIZE.c.obj -o cmTC_7efcf   && :
         
       exitCode: 0
 ...

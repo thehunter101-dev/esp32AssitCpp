@@ -61,5 +61,6 @@
 /home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/esp-idf/perfmon/libperfmon.a
 /home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/esp-idf/spiffs/libspiffs.a
 /home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
+/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/esp-idf/abobija__rc522/libabobija__rc522.a
 /home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/esp-idf/espressif__ssd1306/libespressif__ssd1306.a
 /home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/esp-idf/main/libmain.a

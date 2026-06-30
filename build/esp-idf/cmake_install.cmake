@@ -419,6 +419,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/esp-idf/abobija__rc522/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/esp-idf/espressif__ssd1306/cmake_install.cmake")
 endif()
 

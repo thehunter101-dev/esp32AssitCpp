@@ -641,6 +641,13 @@
 /home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/esp-idf/wifi_provisioning/CMakeFiles/install.dir
 /home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/esp-idf/wifi_provisioning/CMakeFiles/install/local.dir
 /home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/esp-idf/wifi_provisioning/CMakeFiles/install/strip.dir
+/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/esp-idf/abobija__rc522/CMakeFiles/__idf_abobija__rc522.dir
+/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/esp-idf/abobija__rc522/CMakeFiles/edit_cache.dir
+/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/esp-idf/abobija__rc522/CMakeFiles/rebuild_cache.dir
+/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/esp-idf/abobija__rc522/CMakeFiles/list_install_components.dir
+/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/esp-idf/abobija__rc522/CMakeFiles/install.dir
+/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/esp-idf/abobija__rc522/CMakeFiles/install/local.dir
+/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/esp-idf/abobija__rc522/CMakeFiles/install/strip.dir
 /home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/esp-idf/espressif__ssd1306/CMakeFiles/__idf_espressif__ssd1306.dir
 /home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/esp-idf/espressif__ssd1306/CMakeFiles/edit_cache.dir
 /home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/esp-idf/espressif__ssd1306/CMakeFiles/rebuild_cache.dir
