@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "esp32Test",
-    "project_version":    "08657d9-dirty",
+    "project_version":    "3df480e-dirty",
     "project_path":       "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp",
     "idf_path":           "/home/thehunter101/Documents/esp-idf-v5.2.7",
     "build_dir":          "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build",
@@ -850,7 +850,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [ "abobija__rc522", "espressif__ssd1306" ],
             "file": "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/build/esp-idf/main/libmain.a",
-            "sources": [ "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/main/main.cpp", "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/main/modules/LCDI2C.cpp", "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/main/modules/WifiDriver.cpp", "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/main/modules/JsonParser.cpp", "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/main/modules/RFIDManager.cpp", "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/main/modules/ServoManager.cpp" ],
+            "sources": [ "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/main/main.cpp", "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/main/modules/LCDI2C.cpp", "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/main/modules/WifiDriver.cpp", "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/main/modules/JsonParser.cpp", "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/main/modules/RFIDManager.cpp", "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/main/modules/ServoManager.cpp", "/home/thehunter101/Documents/Projects/C++/esp32AssistCpp/main/modules/FingerprintManager.cpp" ],
             "include_dirs": [ ".", "modules" ]
         },
         "mbedtls": {

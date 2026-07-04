@@ -1,0 +1,32 @@
+#+title: esp32AssistCpp - Documentación de Pines y Periféricos
+
+* Mapa de Pines ESP32 (30 pines)
+
+| GPIO | Dispositivo   | Señal     | Periférico   | Dirección |
+|------+---------------+---------------+--------------+-----------|
+|    4 | RC522 RFID    | RST        | GPIO         | Salida    |
+|    5 | RC522 RFID    | CS         | SPI (VSPI)   | Salida    |
+|   12 | AS608 Huella  | TX (ESP→FP)| UART1        | Salida    |
+|   13 | SG90 Servo    | PWM        | LEDC CH0     | Salida    |
+|   14 | AS608 Huella  | RX (ESP←FP)| UART1        | Entrada   |
+|   18 | RC522 RFID    | SCK        | SPI (VSPI)   | Salida    |
+|   19 | RC522 RFID    | MISO       | SPI (VSPI)   | Entrada   |
+|   21 | LCD 2004A     | SDA        | I2C0         | Bidir.    |
+|   22 | LCD 2004A     | SCL        | I2C0         | Bidir.    |
+|   23 | RC522 RFID    | MOSI       | SPI (VSPI)   | Salida    |
+
+* Periféricos
+
+- I2C0: 100 kHz, address LCD 0x27, pull-ups internos habilitados
+- SPI3_HOST (VSPI): 4 MHz, mode 0, DMA deshabilitado
+- UART1: 57600 baud, 8N1, sin flow control, pull-ups internos
+- LEDC: 50 Hz, 14-bit resolution, duty 410-2048 (0°-180°)
+
+* Pines libres (16 disponibles en ESP32 de 30 pines)
+
+0, 1, 2, 3, 6, 7, 8, 9, 10, 11, 15, 16, 17, 25, 26, 27, 32, 33
+
+** Notas
+- GPIO 1 (TX0) y GPIO 3 (RX0) = UART0 / monitor serie
+- GPIO 6-11 = flash interna en módulos WROOM (no usar)
+- GPIO 0, 2, 12, 15 = pines de strapping (usar con precaución)
