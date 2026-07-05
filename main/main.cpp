@@ -3,56 +3,19 @@
 #include "driver/uart.h"
 #include "driver/gpio.h"
 #include "esp_log.h"
+#include "esp_timer.h"
 #include "nvs_flash.h"
 #include "LCDI2C.hpp"
-#include "RFIDManager.hpp"
 #include "ServoManager.hpp"
 #include "FingerprintManager.hpp"
+#include "RFIDManager.hpp"
+#include "WifiDriver.hpp"
+#include "AccessControl.hpp"
+#include "AccessDB.hpp"
+#include "Indicators.hpp"
+#include "secrets.h"
 
 static const char *TAG = "MAIN";
-
-void testFingerprint(LCDI2C& lcd, FingerprintManager& fp)
-{
-    lcd.clean(2, 0);
-    lcd.print("Test FP: Coloque  ", 2, 0);
-    lcd.print("dedo en sensor... ", 3, 0);
-    ESP_LOGI(TAG, "=== TEST FP: Coloque el dedo ===");
-
-    int attempts = 30; // ~15 segundos a 500ms por intento
-    while (attempts--) {
-        if (fp.detectFinger()) {
-            lcd.clean(2, 0);
-            lcd.print("DEDO DETECTADO!   ", 2, 0);
-            lcd.clean(3, 0);
-            lcd.print("Capturando...     ", 3, 0);
-            ESP_LOGI(TAG, "Dedo detectado! Capturando template...");
-
-            if (fp.captureTemplate()) {
-                const auto& tmpl = fp.getLastTemplate();
-                lcd.clean(2, 0);
-                lcd.print("FP CAPTURADA OK!  ", 2, 0);
-                lcd.clean(3, 0);
-                char buf[16];
-                snprintf(buf, sizeof(buf), "Tam: %d B", (int)tmpl.size());
-                lcd.print(buf, 3, 0);
-                ESP_LOGI(TAG, "Template capturado: %d bytes", (int)tmpl.size());
-            } else {
-                lcd.clean(2, 0);
-                lcd.print("Fallo captura tmpl", 2, 0);
-            }
-
-            vTaskDelay(pdMS_TO_TICKS(3000));
-            return;
-        }
-        vTaskDelay(pdMS_TO_TICKS(500));
-    }
-
-    lcd.clean(2, 0);
-    lcd.print("TEST FP: Timeout  ", 2, 0);
-    lcd.clean(3, 0);
-    ESP_LOGW(TAG, "TEST FP: Timeout - No se detecto dedo");
-    vTaskDelay(pdMS_TO_TICKS(2000));
-}
 
 extern "C" void app_main()
 {
@@ -66,6 +29,14 @@ extern "C" void app_main()
     lcd.init();
     lcd.print("Inicializando...  ", 0, 0);
 
+    gpio_config_t bootBtn = {};
+    bootBtn.pin_bit_mask = (1ULL << GPIO_NUM_0);
+    bootBtn.mode = GPIO_MODE_INPUT;
+    bootBtn.pull_up_en = GPIO_PULLUP_ENABLE;
+    bootBtn.pull_down_en = GPIO_PULLDOWN_DISABLE;
+    bootBtn.intr_type = GPIO_INTR_DISABLE;
+    gpio_config(&bootBtn);
+
     ServoManager servo(GPIO_NUM_13);
     if (!servo.init()) {
         lcd.print("Servo init fail   ", 1, 0);
@@ -78,86 +49,125 @@ extern "C" void app_main()
         GPIO_NUM_19,
         GPIO_NUM_18,
         GPIO_NUM_5,
-        GPIO_NUM_4,
         SPI3_HOST
     );
-
-    FingerprintManager fingerprint(
-        GPIO_NUM_12,  // TX (ESP32 -> AS608 RX)
-        GPIO_NUM_14,  // RX (ESP32 <- AS608 TX)
-        UART_NUM_1
-    );
-
-    if (!fingerprint.init()) {
-        lcd.print("FP init fail      ", 1, 0);
-        ESP_LOGE(TAG, "Error al inicializar FingerprintManager");
+    if (!rfid.init()) {
+        lcd.print("RFID init fail    ", 1, 0);
+        ESP_LOGE(TAG, "Error al inicializar RFID");
         return;
     }
 
-    vTaskDelay(pdMS_TO_TICKS(1000)); // estabilizacion del sensor
+    FingerprintManager fingerprint(
+        GPIO_NUM_12,
+        GPIO_NUM_14,
+        UART_NUM_1
+    );
+    if (!fingerprint.init()) {
+        lcd.print("FP init fail      ", 1, 0);
+        ESP_LOGE(TAG, "Error al inicializar Fingerprint");
+        return;
+    }
 
-    // --- TEST DE HUELLA ---
-    testFingerprint(lcd, fingerprint);
+    Indicators indicators(GPIO_NUM_25, GPIO_NUM_26, GPIO_NUM_27);
+    indicators.init();
 
-    // --- FLUJO PRINCIPAL ---
+    vTaskDelay(pdMS_TO_TICKS(500));
+    lcd.clean(1, 0);
+    lcd.print("Conectando WiFi...", 1, 0);
+
+    WifiDriver wifi(WIFI_SSID, WIFI_PASS);
+    wifi.init();
+    wifi.conect();
+    lcd.clean(1, 0);
+    lcd.print("WiFi OK!          ", 1, 0);
+
+    AccessDB accessDB(SUPABASE_URL, SUPABASE_KEY);
+    AccessControl accessControl(lcd, servo, fingerprint, rfid, accessDB, indicators);
+
+    bool registrationMode = false;
+
+    lcd.clean(0, 0);
     lcd.clean(1, 0);
     lcd.clean(2, 0);
     lcd.clean(3, 0);
-
-    bool tagActivo = false;
-
-    rfid.setTagCallback([&lcd, &servo, &fingerprint, &tagActivo](bool tagPresent, const rc522_picc_t* picc) {
-        if (tagPresent && !tagActivo) {
-            tagActivo = true;
-
-            lcd.clean(2, 0);
-            lcd.print("Tag cerca!        ", 2, 0);
-            lcd.clean(3, 0);
-
-            char uidStr[RC522_PICC_UID_STR_BUFFER_SIZE_MAX] = {};
-            rc522_picc_uid_to_str(&picc->uid, uidStr, sizeof(uidStr));
-            lcd.print(uidStr, 3, 0);
-
-            ESP_LOGI(TAG, "Tag cerca! UID: %s", uidStr);
-
-            servo.turnRight(30);
-            lcd.print("Acerca tu dedo!   ", 2, 0);
-            lcd.clean(3, 0);
-
-            if (fingerprint.captureTemplate()) {
-                const auto& tmpl = fingerprint.getLastTemplate();
-                lcd.print("Huella OK!        ", 3, 0);
-                ESP_LOGI(TAG, "Huella capturada - Tam: %d bytes", (int)tmpl.size());
-            } else {
-                lcd.print("FP Fallo/Timeout  ", 3, 0);
-                ESP_LOGW(TAG, "Fallo captura de huella");
-            }
-
-        } else if (!tagPresent && tagActivo) {
-            tagActivo = false;
-
-            lcd.clean(2, 0);
-            lcd.print("Tag no detectado  ", 2, 0);
-            lcd.clean(3, 0);
-
-            ESP_LOGI(TAG, "Tag no detectado");
-            servo.setAngle(90);
-        }
-    });
-
-    if (!rfid.init()) {
-        lcd.print("RFID init fail    ", 1, 0);
-        ESP_LOGE(TAG, "Error al inicializar RFIDManager");
-        return;
-    }
-
-    lcd.clean(1, 0);
-    lcd.print("RFID OK!          ", 1, 0);
-    lcd.clean(2, 0);
-    lcd.print("Tag no detectado  ", 2, 0);
-    ESP_LOGI(TAG, "Sistema listo.");
+    lcd.putChar(LCDI2C::CUSTOM_UNLOCK, 0, 9);
+    lcd.printCentered("SISTEMA LISTO", 1);
+    lcd.putChar(LCDI2C::CUSTOM_USER, 2, 0);
+    lcd.print(" BOOT=cambio", 2, 1);
+    lcd.putChar(LCDI2C::CUSTOM_ARROW, 3, 0);
+    lcd.print(" Login>", 3, 1);
+    lcd.putChar(LCDI2C::CUSTOM_CARD, 3, 10);
+    lcd.putChar(LCDI2C::CUSTOM_FINGER, 3, 12);
+    ESP_LOGI(TAG, "Sistema listo. BOOT toggle modo.");
 
     while (true) {
-        vTaskDelay(pdMS_TO_TICKS(1000));
+        if (isBootToggled()) {
+            registrationMode = !registrationMode;
+            lcd.clean(0, 0);
+            lcd.clean(1, 0);
+            lcd.clean(2, 0);
+            lcd.clean(3, 0);
+            if (registrationMode) {
+                lcd.putChar(LCDI2C::CUSTOM_CARD, 0, 0);
+                lcd.print(" REGISTRO", 0, 1);
+                lcd.putChar(LCDI2C::CUSTOM_ARROW, 1, 0);
+                lcd.print(" Iniciar registro", 1, 1);
+                lcd.putChar(LCDI2C::CUSTOM_ARROW, 2, 0);
+                lcd.print(" BOOT 3s=limpiar", 2, 1);
+                lcd.putChar(LCDI2C::CUSTOM_ARROW, 3, 0);
+                lcd.print(" BOOT=volver", 3, 1);
+
+                int holdCount = 0;
+                while (gpio_get_level(GPIO_NUM_0) == 0 && holdCount < 30) {
+                    vTaskDelay(pdMS_TO_TICKS(100));
+                    holdCount++;
+                }
+                if (holdCount >= 30) {
+                    lcd.clean(0, 0);
+                    lcd.clean(1, 0);
+                    lcd.clean(2, 0);
+                    lcd.clean(3, 0);
+                    lcd.putChar(LCDI2C::CUSTOM_FINGER, 0, 9);
+                    lcd.printCentered("BORRANDO", 1);
+                    lcd.printCentered("huellas...", 2);
+                    fingerprint.deleteAllFingers();
+                    lcd.clean(0, 0);
+                    lcd.clean(1, 0);
+                    lcd.clean(2, 0);
+                    lcd.clean(3, 0);
+                    lcd.putChar(LCDI2C::CUSTOM_CHECK, 0, 9);
+                    lcd.printCentered("HUELLAS BORRADAS", 1);
+                    vTaskDelay(pdMS_TO_TICKS(2000));
+                    lcd.clean(0, 0);
+                    lcd.clean(1, 0);
+                    lcd.clean(2, 0);
+                    lcd.clean(3, 0);
+                    lcd.putChar(LCDI2C::CUSTOM_CARD, 0, 0);
+                    lcd.print(" REGISTRO", 0, 1);
+                    lcd.putChar(LCDI2C::CUSTOM_ARROW, 1, 0);
+                    lcd.print(" Iniciar registro", 1, 1);
+                    lcd.putChar(LCDI2C::CUSTOM_ARROW, 2, 0);
+                    lcd.print(" BOOT 3s=limpiar", 2, 1);
+                    lcd.putChar(LCDI2C::CUSTOM_ARROW, 3, 0);
+                    lcd.print(" BOOT=volver", 3, 1);
+                }
+            } else {
+                lcd.putChar(LCDI2C::CUSTOM_USER, 0, 0);
+                lcd.print(" LOGIN", 0, 1);
+                lcd.putChar(LCDI2C::CUSTOM_CARD, 1, 0);
+                lcd.print(" Acerca tarjeta", 1, 1);
+                lcd.putChar(LCDI2C::CUSTOM_ARROW, 2, 0);
+                lcd.print(" BOOT=registro", 2, 1);
+            }
+            vTaskDelay(pdMS_TO_TICKS(800));
+        }
+
+        if (registrationMode) {
+            accessControl.registrationFlow();
+        } else {
+            accessControl.startAccessFlow();
+        }
+
+        vTaskDelay(pdMS_TO_TICKS(10));
     }
 }

@@ -80,6 +80,18 @@ void LCDI2C::init(){
 
     _command(0x01); // Limpiar pantalla (Borra los cuadros negros iniciales)
     vTaskDelay(pdMS_TO_TICKS(20));
+
+    static const uint8_t customChars[8][8] = {
+        { 0b01110, 0b10001, 0b10001, 0b11111, 0b11011, 0b11111, 0b01110, 0b00000 }, // 0: Lock
+        { 0b01110, 0b10000, 0b10000, 0b11111, 0b11011, 0b11111, 0b01110, 0b00000 }, // 1: Unlock
+        { 0b00000, 0b00001, 0b00011, 0b10110, 0b11100, 0b01000, 0b00000, 0b00000 }, // 2: Check
+        { 0b00000, 0b10001, 0b01010, 0b00100, 0b01010, 0b10001, 0b00000, 0b00000 }, // 3: Cross
+        { 0b01110, 0b11111, 0b10001, 0b10101, 0b10101, 0b10001, 0b11111, 0b00000 }, // 4: Card
+        { 0b00000, 0b01110, 0b10101, 0b11111, 0b11111, 0b01110, 0b00100, 0b00000 }, // 5: Finger
+        { 0b00000, 0b00100, 0b01110, 0b11111, 0b11111, 0b01110, 0b00100, 0b00000 }, // 6: Arrow
+        { 0b00000, 0b00100, 0b01110, 0b01110, 0b00100, 0b11111, 0b00000, 0b00000 }, // 7: User
+    };
+    for (int i = 0; i < 8; i++) createChar(i, customChars[i]);
 }
 
 void LCDI2C::setCursor(uint8_t row, uint8_t column){
@@ -99,4 +111,41 @@ void LCDI2C::print(const char *str, uint8_t row, uint8_t column){
 void LCDI2C::clean(uint8_t row, uint8_t column){
   setCursor(row, column);
   print("                    ",row,column);
+}
+
+void LCDI2C::createChar(uint8_t index, const uint8_t* data){
+    if (index > 7) return;
+    _command(0x40 | (index << 3));
+    for (int i = 0; i < 8; i++) _char(data[i]);
+    _command(0x80);
+}
+
+void LCDI2C::putChar(uint8_t ch, uint8_t row, uint8_t column){
+    setCursor(row, column);
+    _char(ch);
+}
+
+void LCDI2C::typewrite(const char* str, uint8_t row, uint8_t column, uint32_t charDelay){
+    setCursor(row, column);
+    while (*str) {
+        _char(*str++);
+        vTaskDelay(pdMS_TO_TICKS(charDelay));
+    }
+}
+
+void LCDI2C::wipeRow(uint8_t row, uint32_t stepDelay){
+    for (int i = 19; i >= 4; i -= 5) {
+        setCursor(row, i > 19 ? 19 : i);
+        print("     ", row, i > 19 ? 19 : i);
+        vTaskDelay(pdMS_TO_TICKS(stepDelay));
+    }
+    setCursor(row, 0);
+    print("                    ", row, 0);
+}
+
+void LCDI2C::printCentered(const char* str, uint8_t row){
+    int len = 0;
+    while (str[len]) len++;
+    uint8_t col = (20 - len) / 2;
+    print(str, row, col);
 }

@@ -13,6 +13,7 @@ public:
 
     bool init();
     void setAngle(uint8_t angle);
+    void setAngleSmooth(uint8_t angle, uint16_t stepDelayMs = 15);
     void turnRight(uint8_t degrees);
     void turnLeft(uint8_t degrees);
     uint8_t getAngle() const;

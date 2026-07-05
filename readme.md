@@ -1,146 +1,123 @@
+# 🔐 ESP32 Access Control — RFID + Fingerprint
 
-# Table of Contents
+Sistema de control de acceso de **2 factores** (RFID + huella dactilar) con ESP32, LCD 2004A I2C, servo SG90 y backend en Supabase.
 
-1.  [Mapa de Pines ESP32 (30 pines)](#org0c2ad55)
-2.  [Periféricos](#org4025dfe)
-3.  [Pines libres (16 disponibles en ESP32 de 30 pines)](#org84c7395)
-    1.  [Notas](#org90f4690)
+## Características
 
+- **Doble autenticación**: tarjeta RFID + huella dactilar (AS608)
+- **LCD 2004A con iconos personalizados**: feedback visual con caracteres CGRAM (lock, check, cross, card, finger, etc.)
+- **Supabase cloud backend**: registro de tarjetas, huellas, y log de intentos
+- **Re-registro inteligente**: si una tarjeta ya existe, actualiza el `finger_id` vía PATCH
+- **Borrado masivo de huellas**: hold BOOT button 3s en modo registro
+- **Puerta servo-controlada**: apertura/cierre gradual con `setAngleSmooth()`
+- **Efectos LCD**: typewrite, printCentered, wipeRow, animaciones
+- **Indicadores LED + buzzer**: verde = acceso, rojo = denegado, patrones de pitido
 
+## Stack
 
-<a id="org0c2ad55"></a>
+| Componente | Tecnología |
+|------------|------------|
+| MCU | ESP32 WROOM (30 pines) |
+| Framework | ESP-IDF 6.0.2 |
+| LCD | 2004A I2C (0x27) — character display |
+| RFID | RC522 (SPI) |
+| Fingerprint | AS608 (UART) |
+| Servo | SG90 (PWM LEDC) |
+| Backend | Supabase (PostgreSQL + REST) |
+| Build | ninja vía VS Code |
 
-# Mapa de Pines ESP32 (30 pines)
+## Mapa de Pines
 
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+| GPIO | Dispositivo | Señal | Periférico | Dirección |
+|------|-------------|-------|------------|-----------|
+| 5  | RC522 RFID | CS | SPI (VSPI) | Salida |
+| 12 | AS608 Huella | TX (ESP→FP) | UART1 | Salida |
+| 13 | SG90 Servo | PWM | LEDC CH0 | Salida |
+| 14 | AS608 Huella | RX (ESP←FP) | UART1 | Entrada |
+| 18 | RC522 RFID | SCK | SPI (VSPI) | Salida |
+| 19 | RC522 RFID | MISO | SPI (VSPI) | Entrada |
+| 21 | LCD 2004A | SDA | I2C0 | Bidir. |
+| 22 | LCD 2004A | SCL | I2C0 | Bidir. |
+| 23 | RC522 RFID | MOSI | SPI (VSPI) | Salida |
+| 25 | LED verde | Ánodo (+) | GPIO | Salida |
+| 26 | LED rojo | Ánodo (+) | GPIO | Salida |
+| 27 | Buzzer activo | Señal | GPIO | Salida |
+| 0  | BOOT button | Entrada (pull-up) | GPIO | Entrada |
 
+### Periféricos
 
-<colgroup>
-<col  class="org-right" />
+- **I2C0**: 100 kHz, address LCD 0x27, pull-ups internos
+- **SPI3_HOST (VSPI)**: 4 MHz, mode 0, sin DMA
+- **UART1**: 57600 baud, 8N1, sin flow control
+- **LEDC**: 50 Hz, 14-bit resolution, duty 410-2048 (0°-180°)
 
-<col  class="org-left" />
+### Pines libres (ESP32 de 30 pines)
 
-<col  class="org-left" />
+1, 2, 3, 4, 8, 9, 10, 11, 15, 16, 17, 32, 33
 
-<col  class="org-left" />
+> **Notas**: GPIO 1/3 = UART0 (monitor serie), GPIO 6-11 = flash interna WROOM (no usar), GPIO 0/2/12/15 = strapping (usar con precaución)
 
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-right">GPIO</th>
-<th scope="col" class="org-left">Dispositivo</th>
-<th scope="col" class="org-left">Señal</th>
-<th scope="col" class="org-left">Periférico</th>
-<th scope="col" class="org-left">Dirección</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-right">4</td>
-<td class="org-left">RC522 RFID</td>
-<td class="org-left">RST</td>
-<td class="org-left">GPIO</td>
-<td class="org-left">Salida</td>
-</tr>
+## Setup
 
-<tr>
-<td class="org-right">5</td>
-<td class="org-left">RC522 RFID</td>
-<td class="org-left">CS</td>
-<td class="org-left">SPI (VSPI)</td>
-<td class="org-left">Salida</td>
-</tr>
+### 1. Credenciales
 
-<tr>
-<td class="org-right">12</td>
-<td class="org-left">AS608 Huella</td>
-<td class="org-left">TX (ESP→FP)</td>
-<td class="org-left">UART1</td>
-<td class="org-left">Salida</td>
-</tr>
+```bash
+cp .env.example .env
+```
 
-<tr>
-<td class="org-right">13</td>
-<td class="org-left">SG90 Servo</td>
-<td class="org-left">PWM</td>
-<td class="org-left">LEDC CH0</td>
-<td class="org-left">Salida</td>
-</tr>
+Editar `.env`:
 
-<tr>
-<td class="org-right">14</td>
-<td class="org-left">AS608 Huella</td>
-<td class="org-left">RX (ESP←FP)</td>
-<td class="org-left">UART1</td>
-<td class="org-left">Entrada</td>
-</tr>
+```env
+WIFI_SSID=tu_red_wifi
+WIFI_PASS=tu_contraseña
+SUPABASE_URL=https://tu-proyecto.supabase.co
+SUPABASE_KEY=tu_anon_key_supabase
+```
 
-<tr>
-<td class="org-right">18</td>
-<td class="org-left">RC522 RFID</td>
-<td class="org-left">SCK</td>
-<td class="org-left">SPI (VSPI)</td>
-<td class="org-left">Salida</td>
-</tr>
+### 2. Build
 
-<tr>
-<td class="org-right">19</td>
-<td class="org-left">RC522 RFID</td>
-<td class="org-left">MISO</td>
-<td class="org-left">SPI (VSPI)</td>
-<td class="org-left">Entrada</td>
-</tr>
+```bash
+idf.py build
+# o desde VS Code: Ctrl+Shift+P → ESP-IDF: Build Project
+```
 
-<tr>
-<td class="org-right">21</td>
-<td class="org-left">LCD 2004A</td>
-<td class="org-left">SDA</td>
-<td class="org-left">I2C0</td>
-<td class="org-left">Bidir.</td>
-</tr>
+### 3. Flash
 
-<tr>
-<td class="org-right">22</td>
-<td class="org-left">LCD 2004A</td>
-<td class="org-left">SCL</td>
-<td class="org-left">I2C0</td>
-<td class="org-left">Bidir.</td>
-</tr>
+```bash
+idf.py -p COM3 flash monitor
+```
 
-<tr>
-<td class="org-right">23</td>
-<td class="org-left">RC522 RFID</td>
-<td class="org-left">MOSI</td>
-<td class="org-left">SPI (VSPI)</td>
-<td class="org-left">Salida</td>
-</tr>
-</tbody>
-</table>
+### 4. Base de datos Supabase
 
+Ejecutar `supabase_setup.sql` en el SQL Editor de Supabase para crear las tablas:
 
-<a id="org4025dfe"></a>
+- `authorized_cards` — UIDs autorizados con `finger_id`, `name`, `active`
+- `access_logs` — historial de intentos
 
-# Periféricos
+## Uso
 
--   I2C0: 100 kHz, address LCD 0x27, pull-ups internos habilitados
--   SPI3<sub>HOST</sub> (VSPI): 4 MHz, mode 0, DMA deshabilitado
--   UART1: 57600 baud, 8N1, sin flow control, pull-ups internos
--   LEDC: 50 Hz, 14-bit resolution, duty 410-2048 (0°-180°)
+- **Pasar tarjeta RFID** → LCD muestra "Tarjeta OK!" y nombre (si tiene)
+- **Poner dedo en sensor** → verifica huella contra el ID vinculado a la tarjeta
+- **Acceso concedido** → servo abre puerta, LED verde, log a Supabase
+- **Modo registro** → tocar BOOT button cambia entre login/registro (icono V/R)
+- **Registrar tarjeta** → en modo registro, pasar tarjeta + poner dedo 2 veces
+- **Borrar todas las huellas** → en modo registro, hold BOOT button 3s
 
+## Estructura del Proyecto
 
-<a id="org84c7395"></a>
-
-# Pines libres (16 disponibles en ESP32 de 30 pines)
-
-0, 1, 2, 3, 6, 7, 8, 9, 10, 11, 15, 16, 17, 25, 26, 27, 32, 33
-
-
-<a id="org90f4690"></a>
-
-## Notas
-
--   GPIO 1 (TX0) y GPIO 3 (RX0) = UART0 / monitor serie
--   GPIO 6-11 = flash interna en módulos WROOM (no usar)
--   GPIO 0, 2, 12, 15 = pines de strapping (usar con precaución)
-
+```
+main/
+├── main.cpp                    # Entry point, boot, mode toggle
+├── CMakeLists.txt              # Genera secrets.h desde .env
+├── modules/
+│   ├── AccessControl.cpp/.hpp  # Flujo de acceso y registro
+│   ├── AccessDB.cpp/.hpp       # HTTP client para Supabase
+│   ├── FingerprintManager.*    # Comandos AS608
+│   ├── Indicators.*            # LED verde/rojo + buzzer
+│   ├── LCDI2C.*                # LCD 2004A con CGRAM icons
+│   ├── RFIDManager.*           # RC522 wrapper
+│   ├── ServoManager.*          # PWM servo con movimiento gradual
+│   └── WifiDriver.*            # Conexión WiFi
+├── supabase_setup.sql          # Schema SQL para Supabase
+└── .env.example                # Template de credenciales
+```

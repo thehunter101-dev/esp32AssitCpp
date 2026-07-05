@@ -1,14 +1,14 @@
 dependencies:
   abobija/rc522:
-    component_hash: 041887e58a81f8261aa370bd5f62b54edfe0396e226fb565ae14ce41af0ad891
+    component_hash: 97139a54ef1582ffdc825efee669ad438c9c6cda4da3a63377d8f581fd3405eb
     dependencies:
     - name: idf
       require: private
-      version: ^5.0
+      version: '>5.0.0'
     source:
       registry_url: https://components.espressif.com/
       type: service
-    version: 3.4.3
+    version: 2.6.1
   espressif/ssd1306:
     component_hash: 102cfc05b1b304862fa3f494e9dd955844bcc5f6cb16596e4ca5df3e6bf9fd0d
     dependencies:
@@ -22,10 +22,10 @@ dependencies:
   idf:
     source:
       type: idf
-    version: 5.2.7
+    version: 6.0.2
 direct_dependencies:
 - abobija/rc522
 - espressif/ssd1306
 manifest_hash: ea9c0b90ee5079b431eeea550d04f8d0997ca1f3a68910a2246b6d4ba820a66c
 target: esp32
-version: 2.0.0
+version: 3.0.0

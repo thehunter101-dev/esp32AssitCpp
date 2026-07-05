@@ -1,20 +1,18 @@
 #ifndef FINGERPRINTMANAGER_H_
 #define FINGERPRINTMANAGER_H_
 
-#include <cstdint>
-#include <vector>
-#include <functional>
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
 #include "driver/uart.h"
 #include "driver/gpio.h"
 #include "esp_log.h"
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
+#include <cstdint>
+#include <functional>
+#include <vector>
+#include <cstring>
+#include "nvs_flash.h"
 
 #define FPM_BUF_SIZE 1024
-
-// Comandos estáticos pre-calculados (Header + Addr + PkgID + Len + Instr + Data + Checksum)
-static const uint8_t FPM_CMD_GEN_IMG[] = {0xEF, 0x01, 0xFF, 0xFF, 0xFF, 0xFF, 0x01, 0x00, 0x03, 0x01, 0x00, 0x05};
-static const uint8_t FPM_CMD_IMG2TZ[] = {0xEF, 0x01, 0xFF, 0xFF, 0xFF, 0xFF, 0x01, 0x00, 0x04, 0x02, 0x01, 0x00, 0x08};
 
 class FingerprintManager {
 public:
@@ -28,31 +26,35 @@ public:
 
     bool init();
 
-    // GenImg: true si hay dedo (response[9] == 0x00)
     bool detectFinger();
-
-    // Bucle 6s: espera dedo → GenImg → Img2Tz → template dummy 512B
     bool captureTemplate(uint32_t timeoutMs = 6000);
+    bool searchFinger(uint16_t& fingerID, uint16_t& score);
+    bool enrollFinger(uint16_t& fingerID);
+    bool deleteAllFingers();
 
     const std::vector<uint8_t>& getLastTemplate() const;
     uint16_t getLastFingerID() const;
     void setResultCallback(ResultCallback cb);
 
 private:
-    gpio_num_t _txPin;
-    gpio_num_t _rxPin;
+    gpio_num_t _txPin, _rxPin;
     uart_port_t _uartNum;
     uint32_t _baud;
     std::vector<uint8_t> _lastTemplate;
     uint16_t _lastFingerID;
+    nvs_handle_t _nvsHandle;
     ResultCallback _callback;
 
     uint8_t _response[FPM_BUF_SIZE];
 
     static constexpr const char* TAG = "FP_MGR";
 
+    static uint8_t buildPacket(uint8_t* cmd, uint8_t instruction, const uint8_t* params, uint8_t paramLen);
     bool sendAndRead(const uint8_t* cmd, size_t cmdLen, int timeoutMs);
     uint8_t getConfCode() const;
+    bool waitForFinger(uint32_t timeoutMs);
+    uint16_t _getNextFingerID();
+    void _saveNextFingerID(uint16_t nextID);
 };
 
 #endif

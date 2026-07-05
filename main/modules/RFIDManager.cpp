@@ -1,9 +1,9 @@
 #include "RFIDManager.hpp"
 
 RFIDManager::RFIDManager(gpio_num_t mosi, gpio_num_t miso, gpio_num_t sclk,
-                         gpio_num_t cs, gpio_num_t rst, spi_host_device_t host)
-    : _mosi(mosi), _miso(miso), _sclk(sclk), _cs(cs), _rst(rst), _host(host),
-      _driver(nullptr), _scanner(nullptr), _tagPresent(false), _callback(nullptr)
+                         gpio_num_t cs, spi_host_device_t host)
+    : _mosi(mosi), _miso(miso), _sclk(sclk), _cs(cs), _host(host),
+      _scanner(nullptr), _newTagScanned(false), _lastSerialNumber(0), _lastSerialSize(0), _callback(nullptr)
 {
 }
 
@@ -17,67 +17,92 @@ RFIDManager::~RFIDManager()
 
 bool RFIDManager::init()
 {
-    spi_bus_config_t bus_cfg = {};
-    bus_cfg.mosi_io_num = _mosi;
-    bus_cfg.miso_io_num = _miso;
-    bus_cfg.sclk_io_num = _sclk;
-    bus_cfg.quadwp_io_num = -1;
-    bus_cfg.quadhd_io_num = -1;
+    rc522_config_t config = {
+        .scan_interval_ms = 125,
+        .task_stack_size = 4 * 1024,
+        .task_priority = 4,
+        .transport = RC522_TRANSPORT_SPI,
+        .spi = {
+            .host = _host,
+            .miso_gpio = _miso,
+            .mosi_gpio = _mosi,
+            .sck_gpio = _sclk,
+            .sda_gpio = _cs,
+            .clock_speed_hz = 5000000,
+            .device_flags = 0,
+            .bus_is_initialized = false,
+        },
+    };
 
-    spi_device_interface_config_t dev_cfg = {};
-    dev_cfg.mode = 0;
-    dev_cfg.clock_speed_hz = 4 * 1000 * 1000;
-    dev_cfg.spics_io_num = _cs;
-    dev_cfg.queue_size = 7;
-
-    rc522_spi_config_t driver_config = {};
-    driver_config.host_id = _host;
-    driver_config.bus_config = &bus_cfg;
-    driver_config.dev_config = dev_cfg;
-    driver_config.dma_chan = SPI_DMA_DISABLED;
-    driver_config.rst_io_num = _rst;
-
-    esp_err_t ret = rc522_spi_create(&driver_config, &_driver);
+    esp_err_t ret = rc522_create(&config, &_scanner);
     if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "Error al crear driver SPI: %s", esp_err_to_name(ret));
+        ESP_LOGE(TAG, "Error creating RC522: %s", esp_err_to_name(ret));
         return false;
     }
 
-    ret = rc522_driver_install(_driver);
-    if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "Error al instalar driver: %s", esp_err_to_name(ret));
-        return false;
-    }
-
-    rc522_config_t scanner_config = {};
-    scanner_config.driver = _driver;
-
-    ret = rc522_create(&scanner_config, &_scanner);
-    if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "Error al crear scanner: %s", esp_err_to_name(ret));
-        return false;
-    }
-
-    ret = rc522_register_events(_scanner, RC522_EVENT_PICC_STATE_CHANGED,
+    ret = rc522_register_events(_scanner, RC522_EVENT_TAG_SCANNED,
                                 _eventBridge, this);
     if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "Error al registrar eventos: %s", esp_err_to_name(ret));
+        ESP_LOGE(TAG, "Error registering events: %s", esp_err_to_name(ret));
         return false;
     }
 
     ret = rc522_start(_scanner);
     if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "Error al iniciar scanner: %s", esp_err_to_name(ret));
+        ESP_LOGE(TAG, "Error starting scanner: %s", esp_err_to_name(ret));
         return false;
     }
 
-    ESP_LOGI(TAG, "RFIDManager inicializado correctamente");
+    ESP_LOGI(TAG, "RFIDManager initialized");
     return true;
 }
 
-bool RFIDManager::isTagPresent() const
+bool RFIDManager::isNewTagScanned()
 {
-    return _tagPresent;
+    bool ret = _newTagScanned;
+    _newTagScanned = false;
+    return ret;
+}
+
+void RFIDManager::getLastSerial(uint8_t* uid, uint8_t& uidLen) const
+{
+    uint8_t size = _lastSerialSize;
+    if (size == 0 || size > 7) size = 4;
+    uidLen = size;
+    for (int i = 0; i < size; i++) {
+        uid[i] = (_lastSerialNumber >> (8 * (size - 1 - i))) & 0xFF;
+    }
+}
+
+std::string RFIDManager::getLastUIDStr() const
+{
+    char buf[17];
+    snprintf(buf, sizeof(buf), "%016llX", (unsigned long long)_lastSerialNumber);
+    return std::string(buf);
+}
+
+bool RFIDManager::readMifareBlock(uint8_t blockAddr, uint8_t* data, uint8_t dataLen)
+{
+    if (!_scanner || !data || dataLen < 16) return false;
+
+    // Build uid array from stored serial number
+    uint8_t uid[4] = {};
+    uint8_t size = _lastSerialSize;
+    if (size == 0 || size > 4) size = 4;
+    for (int i = 0; i < size; i++) {
+        uid[i] = (_lastSerialNumber >> (8 * (size - 1 - i))) & 0xFF;
+    }
+
+    // Default MIFARE key (transport config)
+    const uint8_t defaultKey[6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+
+    esp_err_t err = rc522_mifare_read_block(_scanner, blockAddr,
+                                            defaultKey, uid, size, data);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "MIFARE read block %u fail: %s", blockAddr, esp_err_to_name(err));
+        return false;
+    }
+    return true;
 }
 
 void RFIDManager::setTagCallback(TagCallback callback)
@@ -85,37 +110,21 @@ void RFIDManager::setTagCallback(TagCallback callback)
     _callback = callback;
 }
 
-std::string RFIDManager::getLastUID() const
-{
-    char buf[RC522_PICC_UID_STR_BUFFER_SIZE_MAX] = {};
-    rc522_picc_uid_to_str(&_lastPicc.uid, buf, sizeof(buf));
-    return std::string(buf);
-}
-
 void RFIDManager::_eventBridge(void* arg, esp_event_base_t base,
                                int32_t event_id, void* data)
 {
     auto* self = static_cast<RFIDManager*>(arg);
-    auto* event = static_cast<rc522_picc_state_changed_event_t*>(data);
-    self->_handleEvent(event);
-}
+    auto* event_data = static_cast<rc522_event_data_t*>(data);
+    auto* tag = static_cast<rc522_tag_t*>(event_data->ptr);
 
-void RFIDManager::_handleEvent(rc522_picc_state_changed_event_t* event)
-{
-    rc522_picc_t* picc = event->picc;
+    self->_newTagScanned = true;
+    self->_lastSerialNumber = tag->serial_number;
+    self->_lastSerialSize = 4;
 
-    if (picc->state == RC522_PICC_STATE_ACTIVE && event->old_state < RC522_PICC_STATE_ACTIVE) {
-        _tagPresent = true;
-        _lastPicc = *picc;
-        rc522_picc_print(picc);
-        ESP_LOGI(TAG, "Tag detectado");
+    ESP_LOGI(self->TAG, "Tag scanned: serial=%016llX",
+             (unsigned long long)tag->serial_number);
 
-    } else if (picc->state == RC522_PICC_STATE_IDLE && event->old_state >= RC522_PICC_STATE_ACTIVE) {
-        _tagPresent = false;
-        ESP_LOGI(TAG, "Tag removido");
-    }
-
-    if (_callback) {
-        _callback(_tagPresent, picc);
+    if (self->_callback) {
+        self->_callback(tag->serial_number);
     }
 }

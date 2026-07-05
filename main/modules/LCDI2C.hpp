@@ -13,6 +13,22 @@ class LCDI2C{
   void setCursor(uint8_t row, uint8_t column);
   void print(const char *str,uint8_t row, uint8_t column);
   void clean(uint8_t row, uint8_t column);
+
+  void createChar(uint8_t index, const uint8_t* data);
+  void putChar(uint8_t ch, uint8_t row, uint8_t column);
+  void typewrite(const char* str, uint8_t row, uint8_t column, uint32_t charDelay = 30);
+  void wipeRow(uint8_t row, uint32_t stepDelay = 15);
+  void printCentered(const char* str, uint8_t row);
+
+  static constexpr uint8_t CUSTOM_LOCK = 0;
+  static constexpr uint8_t CUSTOM_UNLOCK = 1;
+  static constexpr uint8_t CUSTOM_CHECK = 2;
+  static constexpr uint8_t CUSTOM_CROSS = 3;
+  static constexpr uint8_t CUSTOM_CARD = 4;
+  static constexpr uint8_t CUSTOM_FINGER = 5;
+  static constexpr uint8_t CUSTOM_ARROW = 6;
+  static constexpr uint8_t CUSTOM_USER = 7;
+
   private:
   gpio_num_t _sdaPin;
   gpio_num_t _sclPin;

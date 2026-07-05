@@ -1,4 +1,6 @@
 #include "ServoManager.hpp"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
 
 ServoManager::ServoManager(gpio_num_t pin, ledc_channel_t channel, ledc_timer_t timer)
     : _pin(pin), _channel(channel), _timer(timer), _currentAngle(90) {}
@@ -45,6 +47,23 @@ void ServoManager::setAngle(uint8_t angle)
 
     ledc_set_duty(LEDC_LOW_SPEED_MODE, _channel, duty);
     ledc_update_duty(LEDC_LOW_SPEED_MODE, _channel);
+}
+
+void ServoManager::setAngleSmooth(uint8_t angle, uint16_t stepDelayMs)
+{
+    if (angle > 180) angle = 180;
+    int start = _currentAngle;
+    int end = angle;
+    int step = (end > start) ? 1 : -1;
+
+    while (start != end) {
+        start += step;
+        uint32_t duty = MIN_DUTY + ((MAX_DUTY - MIN_DUTY) * start) / 180;
+        ledc_set_duty(LEDC_LOW_SPEED_MODE, _channel, duty);
+        ledc_update_duty(LEDC_LOW_SPEED_MODE, _channel);
+        vTaskDelay(pdMS_TO_TICKS(stepDelayMs));
+    }
+    _currentAngle = angle;
 }
 
 void ServoManager::turnRight(uint8_t degrees)
