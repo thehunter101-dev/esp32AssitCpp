@@ -29,5 +29,5 @@ idf_component_register(
          "modules/RFIDManager.cpp"
          "modules/Indicators.cpp"
     INCLUDE_DIRS "." "modules" "${SECRETS_DIR}"
-    REQUIRES freertos nvs_flash driver esp_wifi esp_event esp_http_client esp_timer esp_driver_uart esp_driver_gpio esp_driver_ledc esp_driver_spi esp_driver_i2c rc522
+    REQUIRES freertos nvs_flash driver esp_wifi esp_event esp_http_client esp_timer esp_driver_uart esp_driver_gpio esp_driver_ledc esp_driver_spi esp_driver_i2c lwip rc522
 )

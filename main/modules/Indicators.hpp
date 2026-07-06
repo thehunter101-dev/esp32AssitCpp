@@ -11,6 +11,7 @@ public:
     void granted();
     void denied();
     void registered();
+    void cardScanned();
     void off();
 
 private:

@@ -47,6 +47,11 @@ void Indicators::registered()
     gpio_set_level(_buzzer, 0);
 }
 
+void Indicators::cardScanned()
+{
+    beep(60);
+}
+
 void Indicators::off()
 {
     gpio_set_level(_green, 0);

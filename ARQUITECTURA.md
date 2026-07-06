@@ -1,231 +1,132 @@
-# 🔐 Sistema de Control de Acceso ESP32 - Documentación Técnica
+# Control de Acceso ESP32 — Arquitectura
 
-## Arquitectura General
+## Visión General
 
-El sistema es un **control de acceso con 2 factores** (RFID + Huella Dactilar) que registra todos los intentos en una base de datos para auditoría web.
+Sistema de **doble factor** (RFID + huella dactilar) con backend cloud **Supabase**.
+El ESP32 orquesta la lectura de tarjeta, validación en la nube, captura de huella,
+apertura de puerta con servo, y registro de cada intento.
 
-### Componentes Principales
+## Diagrama de Módulos
 
 ```
-┌─────────────────┐
-│  ESP32 WROOM    │
-│    (GPIO)       │
-├─────────────────┤
-│ ┌─────────────────────────────────────┐
-│ │  LCDI2C (LCD 2004A)                 │ I2C0 (21=SDA, 22=SCL)
-│ ├─────────────────────────────────────┤
-│ │  ServoManager (SG90)                │ GPIO 13 (PWM LEDC)
-│ ├─────────────────────────────────────┤
-│ │  FingerprintManager (AS608)         │ UART1 (12=TX, 14=RX, 57600 baud)
-│ ├─────────────────────────────────────┤
-│ │  AccessControl                      │ Orquesta flujo (RFID→Huella→Servo)
-│ ├─────────────────────────────────────┤
-│ │  AccessDB                           │ NVS + HTTP POST al servidor
-│ └─────────────────────────────────────┘
-│         WiFi (env_provisioning)        │ Para sincronización
-└─────────────────┘
+RFID (RC522 SPI) ──┐
+                   ├──→ AccessControl ──→ AccessDB ──→ Supabase REST API
+AS608 (UART) ──────┘        │
+                            │
+  Servo SG90 (PWM) ─────────┤
+                            │
+  LCD 2004A (I2C) ─────────┤ ← feedback visual con iconos CGRAM
+                            │
+  Indicators (GPIO) ────────┤ ← LED verde/rojo + buzzer
 ```
 
-## Flujo de Operación
+## Módulos
 
-### 1. **Lectura RFID** (Pendiente - Ver Sección 3)
-   - ESP32 espera tarjeta cercana
-   - Lee UID de 4-7 bytes
-   - Valida contra lista de tarjetas autorizadas (TODO)
+### AccessControl (`main/modules/AccessControl.hpp/cpp`)
+Orquesta el flujo completo:
+1. Espera tarjeta RFID (10s timeout)
+2. Valida contra Supabase vía `AccessDB::checkCard()`
+3. Pide huella y la matchea contra `finger_id` de la BD
+4. Abre puerta (servo 30°) si todo OK
+5. Registra intento en Supabase
+6. `registrationFlow()`: registro de nueva tarjeta + huella, o actualización de tarjeta existente con verificación de huella
+7. `checkRemoteCommands()`: polling cada 5s de `pending_commands`, ejecuta `unlock` remoto
 
-### 2. **Captura de Huella Dactilar** (✅ Implementado)
-   - Se solicita huella al usuario
-   - Sensor AS608 captura y procesa
-   - Genera plantilla de 512 bytes
+### AccessDB (`main/modules/AccessDB.hpp/cpp`)
+Cliente HTTP para Supabase REST API:
+- `checkCard()` → GET `/rest/v1/authorized_cards?uid_hex=eq.XYZ`
+- `registerCard()` → POST `/rest/v1/authorized_cards` (si 409 → PATCH)
+- `logAttempt()` → POST `/rest/v1/access_logs`
+- `deactivateCard()` → PATCH para desactivar tarjeta tras 3 fallos
+- `checkPendingCommands()` → GET `/rest/v1/pending_commands?executed=eq.false`
+- `markCommandExecuted()` → PATCH para marcar comando como ejecutado
+- Parseo manual de JSON (sin cJSON, usa `snprintf` + string search), soporte de escapes `\n`, `\r`, `\t`, `\"`, `\\`
 
-### 3. **Validación de Huella** (✅ Base implementada)
-   - Compara plantilla capturada vs. plantilla registrada
-   - Actualmente acepta cualquier huella válida (TODO: Agregar comparación real)
+### LCDI2C (`main/modules/LCDI2C.hpp/cpp`)
+Driver I2C para LCD 2004A (20×4):
+- 8 caracteres CGRAM personalizados (lock, unlock, check, cross, card, finger, arrow, user)
+- Efectos: typewrite, printCentered, wipeRow
+- Animaciones con iconos
 
-### 4. **Accionamiento de Servo** (✅ Implementado)
-   - Si validación exitosa: servo gira a 30° (abre puerta)
-   - Espera 1 segundo
-   - Vuelve a 90° (cierra puerta)
+### RFIDManager (`main/modules/RFIDManager.hpp/cpp`)
+Wrapper de librería `abobija/rc522` v2.6.1 por SPI:
+- `isNewTagScanned()` / `getLastSerial()`
+- Inicialización en SPI3_HOST (GPIO 23/19/18/5)
 
-### 5. **Registro de Intento** (✅ Implementado)
-   - Guarda en NVS con timestamp
-   - Estructura JSON: `{timestamp, success, reason, fingerID, uid}`
-   - Máximo 100 intentos en memoria
+### FingerprintManager (`main/modules/FingerprintManager.hpp/cpp`)
+Sensor AS608 por UART1 (57600 baud):
+- `searchFinger()`: busca huella en librería del sensor (con capture callback al encontrar match)
+- `enrollFinger()`: registro de 2 capturas (capture callback después de cada scan)
+- `deleteAllFingers()`: borrado masivo vía comando DEL_ALL (0x0D)
+- `setLED(bool)`: control de LED vía AuraLEDControl (0x35)
+- `setCaptureCallback()`: callback disparado en captura exitosa para feedback (beep)
+- Timeouts configurables
 
-### 6. **Sincronización con Servidor** (✅ Implementado)
-   - Cada 60 segundos: intenta POST a servidor
-   - Envía array JSON de intentos pendientes
-   - Si HTTP 200/201: limpia NVS
-   - Si falla: reintentos en próximo ciclo
+### ServoManager (`main/modules/ServoManager.hpp/cpp`)
+SG90 por PWM (LEDC, GPIO 13):
+- `setAngleSmooth(angle, delayMs)`: movimiento gradual 1°
+- Rango: 0°-90°
 
-## Clases Implementadas
+### Indicators (`main/modules/Indicators.hpp/cpp`)
+Feedback físico:
+- LED verde (GPIO 25) + LED rojo (GPIO 26) + buzzer activo (GPIO 27)
+- Patrones: granted, denied, registered, off
+- Buzzer con transistor (no drive directo)
 
-### `AccessControl`
-**Archivo:** `main/modules/AccessControl.hpp/cpp`
+### WifiDriver (`main/modules/WifiDriver.hpp/cpp`)
+Conexión WiFi con manejo de eventos.
 
-Orquesta el flujo de acceso:
-```cpp
-AccessControl(LCDI2C& lcd, ServoManager& servo, FingerprintManager& fingerprint);
+## Seguridad de Credenciales
 
-bool startAccessFlow();                    // Inicia secuencia RFID→Huella→Servo
-void processRFIDCard(uint8_t* uid, ...);  // Procesa tarjeta detectada
-bool validateFingerprint(...);            // Valida huella
-void unlockDoor();                        // Acciona servo
-void recordAttempt(...);                  // Registra en NVS
-void setAccessCallback(...);              // Notificación de intentos
-```
+- `.env` con credenciales reales (gitignorado)
+- `.env.example` con placeholders (trackeado)
+- `secrets.h` generado automáticamente desde `.env` en build (`main/CMakeLists.txt`)
+- `#include "secrets.h"` para tener `WIFI_SSID`, `WIFI_PASS`, `SUPABASE_URL`, `SUPABASE_KEY`
 
-### `AccessDB`
-**Archivo:** `main/modules/AccessDB.hpp/cpp`
+## Base de Datos (Supabase)
 
-Gestiona almacenamiento y sincronización:
-```cpp
-AccessDB(const char* serverUrl);          // Inicializa con URL de servidor
-esp_err_t init();                         // Abre NVS namespace
-esp_err_t saveAttempt(...);               // Guarda en NVS
-esp_err_t syncToServer();                 // POST a servidor
-uint32_t getPendingCount();               // Intentos pendientes
-esp_err_t clearAttempts();                // Limpia después de sync exitoso
-```
+### authorized_cards
+| Columna | Tipo | Default |
+|---------|------|---------|
+| uid_hex | TEXT PK | — |
+| finger_id | INTEGER | — |
+| name | TEXT | '' |
+| active | BOOLEAN | true |
+| created_at | TIMESTAMP | now() AT TIME ZONE 'America/Bogota' |
 
-## Configuración
+### access_logs
+| Columna | Tipo | Default |
+|---------|------|---------|
+| id | BIGINT (identity) | — |
+| uid_hex | TEXT | — |
+| success | BOOLEAN | — |
+| reason | TEXT | '' |
+| finger_id | INTEGER | 0 |
+| created_at | TIMESTAMP | now() AT TIME ZONE 'America/Bogota' |
 
-### URL del Servidor
-**Archivo:** `main/main.cpp` línea ~60
-```cpp
-AccessDB accessDB("http://192.168.1.100:8000/api/access");  // CAMBIAR IP
-```
+RLS: anon key puede leer/escribir en ambas tablas.
 
-### Pines RFID (TODO)
-Cuando se implemente RFID:
-```cpp
-GPIO_NUM_23  // MOSI
-GPIO_NUM_19  // MISO
-GPIO_NUM_18  // CLK
-GPIO_NUM_5   // CS
-GPIO_NUM_4   // RST
-```
+## Pines (ESP32 WROOM 30-pin)
 
-## Problemas Pendientes & Soluciones
+| Componente | GPIO | Protocolo |
+|------------|------|-----------|
+| RFID MOSI | 23 | SPI3 |
+| RFID MISO | 19 | SPI3 |
+| RFID CLK | 18 | SPI3 |
+| RFID CS | 5 | SPI3 |
+| Servo PWM | 13 | LEDC |
+| Fingerprint TX | 12 | UART1 |
+| Fingerprint RX | 14 | UART1 |
+| LCD SDA | 21 | I2C0 |
+| LCD SCL | 22 | I2C0 |
+| LED Verde | 25 | GPIO out |
+| LED Rojo | 26 | GPIO out |
+| Buzzer | 27 | GPIO out |
 
-### ❌ **RFID No Funcional (RC522 v2.6.1)**
-
-**Problema:** Librería RC522 v2.6.1 no compatible con ESP-IDF 6.0.2
-- API esperada: `rc522_spi_create()`, `rc522_driver_install()`
-- Realidad: Funciones no existen en v2.6.1
-
-**Soluciones:**
-
-**Opción A: Implementación Manual SPI (Recomendado)**
-```cpp
-// main/modules/RFIDReader.hpp (CREAR)
-class RFIDReader {
-public:
-    void init(gpio_num_t mosi, miso, sclk, cs, rst);
-    bool readUID(uint8_t* uid, uint8_t& uidLen);  // Retorna UID
-private:
-    void spiWrite(uint8_t byte);
-    uint8_t spiRead();
-    void chipSelect();
-    void chipDeselect();
-};
-```
-
-**Opción B: Usar librería MFRC522 alternativa**
-```bash
-# En idf_component.yml agregar:
-dependencies:
-  owntech/mfrc522: "^1.0.0"  # Buscar alternativa compatible
-```
-
-**Opción C: Leyenda de tarjetas preregistradas (Workaround)**
-```cpp
-// Simular lectura RFID para testing
-const uint8_t VALID_CARDS[][4] = {
-    {0x12, 0x34, 0x56, 0x78},
-    {0xAA, 0xBB, 0xCC, 0xDD},
-};
-
-// En AccessControl::startAccessFlow():
-// accessControl.processRFIDCard(VALID_CARDS[0], 4);  // Testing
-```
-
-## API del Servidor (Esperado)
-
-**POST** `/api/access`
-
-**Request:**
-```json
-[
-  {
-    "timestamp": 1688132400,
-    "success": true,
-    "reason": "Access granted",
-    "fingerID": 1,
-    "uid": "123456"
-  },
-  {
-    "timestamp": 1688132450,
-    "success": false,
-    "reason": "Fingerprint mismatch",
-    "fingerID": 0,
-    "uid": "AABBCCDD"
-  }
-]
-```
-
-**Response Exitosa:**
-```json
-{ "status": "ok", "processed": 2 }
-```
-
-## Compilación & Flash
+## Compilación
 
 ```bash
-# Compilar (ya hecho)
 idf.py build
-
-# Flash a ESP32
 idf.py -p COM3 flash
-
-# Monitorear logs
 idf.py -p COM3 monitor
 ```
-
-## Logs Esperados (Console)
-
-```
-I (523) MAIN: Sistema listo. Esperando acceso...
-I (5000) AccessControl: === FLUJO DE ACCESO INICIADO ===
-I (5100) AccessControl: RFID detectado: 12345678
-I (6000) AccessControl: === CAPTURANDO HUELLA ===
-I (6200) FingerprintManager: Huella capturada
-I (6300) AccessControl: Accionando servo para abrir puerta...
-I (7500) AccessControl: Acceso concedido (HTTP 200)
-I (7600) AccessDB: Sincronización exitosa - 1 intento enviado
-```
-
-## Estado Actual del Proyecto
-
-✅ **Compilado exitosamente** para ESP-IDF 6.0.2
-✅ **LCD 2004A** (I2C) - Funcional
-✅ **AS608 Fingerprint** (UART) - Funcional (captura en demo)
-✅ **SG90 Servo** (PWM) - Funcional
-✅ **NVS Storage** - Funcional
-✅ **HTTP Client** - Funcional (envío de datos)
-❌ **RFID RC522** - Requiere integración manual
-
-## Próximos Pasos
-
-1. **Implementar RFIDReader.hpp/cpp** con protocolo SPI directo
-2. **Integrar en AccessControl::startAccessFlow()** para detectar tarjeta
-3. **Crear BD de tarjetas autorizadas** en NVS
-4. **Implementar comparación real de huellas** (Img2Tz + Match en AS608)
-5. **Backend Flask/Django** para registrar intentos
-6. **Frontend web** para visualizar logs de acceso
-
----
-
-**Fecha Actualización:** 2026-07-04
-**ESP-IDF:** v6.0.2
-**Compilador:** xtensa-esp32-elf v15.2.0_20251204

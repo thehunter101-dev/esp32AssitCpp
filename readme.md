@@ -7,7 +7,10 @@ Sistema de control de acceso de **2 factores** (RFID + huella dactilar) con ESP3
 - **Doble autenticación**: tarjeta RFID + huella dactilar (AS608)
 - **LCD 2004A con iconos personalizados**: feedback visual con caracteres CGRAM (lock, check, cross, card, finger, etc.)
 - **Supabase cloud backend**: registro de tarjetas, huellas, y log de intentos
-- **Re-registro inteligente**: si una tarjeta ya existe, actualiza el `finger_id` vía PATCH
+- **Re-registro inteligente**: si una tarjeta ya existe, verifica si la huella coincide (misma → SIN CAMBIOS, distinta → actualiza `finger_id` vía PATCH, nueva → enroll + PATCH)
+- **Pitido en captura de huella**: beep cuando el sensor captura la imagen (sabés cuándo retirar el dedo)
+- **LED del sensor**: apagado en idle vía comando AuraLEDControl
+- **Desbloqueo remoto**: polling cada 5s de `pending_commands` en Supabase, INSERT `command='unlock'` para abrir desde la web
 - **Borrado masivo de huellas**: hold BOOT button 3s en modo registro
 - **Puerta servo-controlada**: apertura/cierre gradual con `setAngleSmooth()`
 - **Efectos LCD**: typewrite, printCentered, wipeRow, animaciones
@@ -93,14 +96,18 @@ Ejecutar `supabase_setup.sql` en el SQL Editor de Supabase para crear las tablas
 
 - `authorized_cards` — UIDs autorizados con `finger_id`, `name`, `active`
 - `access_logs` — historial de intentos
+- `pending_commands` — comandos remotos (INSERT `command='unlock'` para abrir puerta)
 
 ## Uso
 
 - **Pasar tarjeta RFID** → LCD muestra "Tarjeta OK!" y nombre (si tiene)
-- **Poner dedo en sensor** → verifica huella contra el ID vinculado a la tarjeta
+- **Poner dedo en sensor** → verifica huella contra el ID vinculado a la tarjeta (pitido al detectar)
 - **Acceso concedido** → servo abre puerta, LED verde, log a Supabase
-- **Modo registro** → tocar BOOT button cambia entre login/registro (icono V/R)
-- **Registrar tarjeta** → en modo registro, pasar tarjeta + poner dedo 2 veces
+- **3 intentos fallidos** → tarjeta desactivada + lockout 30s
+- **Modo registro** → tocar BOOT button cambia entre login/registro
+- **Registrar tarjeta nueva** → en modo registro, pasar tarjeta + poner dedo 2 veces
+- **Actualizar tarjeta existente** → al pasar una tarjeta ya registrada, podés verificar/matar la huella actual o registrar una nueva
+- **Desbloqueo remoto** → `INSERT INTO pending_commands (command) VALUES ('unlock');` en Supabase
 - **Borrar todas las huellas** → en modo registro, hold BOOT button 3s
 
 ## Estructura del Proyecto

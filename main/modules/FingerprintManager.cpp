@@ -2,7 +2,7 @@
 
 FingerprintManager::FingerprintManager(gpio_num_t txPin, gpio_num_t rxPin, uart_port_t uartNum, uint32_t baud)
     : _txPin(txPin), _rxPin(rxPin), _uartNum(uartNum), _baud(baud),
-      _lastFingerID(0), _nvsHandle(0), _callback(nullptr)
+      _lastFingerID(0), _nvsHandle(0), _callback(nullptr), _captureCallback(nullptr)
 {
 }
 
@@ -54,6 +54,9 @@ bool FingerprintManager::init()
 
     ESP_LOGI(TAG, "FP AS608 en UART%d TX:%d RX:%d @%lu",
              (int)_uartNum, (int)_txPin, (int)_rxPin, (unsigned long)_baud);
+
+    setLED(false);
+
     return true;
 }
 
@@ -190,6 +193,7 @@ bool FingerprintManager::searchFinger(uint16_t& fingerID, uint16_t& score)
     score = (_response[12] << 8) | _response[13];
 
     _lastFingerID = fingerID;
+    if (_captureCallback) _captureCallback(0);
     ESP_LOGI(TAG, "searchFinger: match! ID=%u score=%u", fingerID, score);
 
     if (_callback) _callback(true, _lastTemplate, fingerID, "Match");
@@ -215,6 +219,7 @@ bool FingerprintManager::enrollFinger(uint16_t& fingerID)
     }
 
     ESP_LOGI(TAG, "ENROLL: Primer scan OK. Quite el dedo.");
+    if (_captureCallback) _captureCallback(1);
     vTaskDelay(pdMS_TO_TICKS(2000));
 
     ESP_LOGI(TAG, "ENROLL: Ponga el mismo dedo (2da vez)");
@@ -230,6 +235,7 @@ bool FingerprintManager::enrollFinger(uint16_t& fingerID)
     }
 
     ESP_LOGI(TAG, "ENROLL: Segundo scan OK. Creando modelo...");
+    if (_captureCallback) _captureCallback(2);
 
     plen = buildPacket(cmd, 0x05, nullptr, 0);
     if (!sendAndRead(cmd, plen, 1000) || getConfCode() != 0x00) {
@@ -251,6 +257,23 @@ bool FingerprintManager::enrollFinger(uint16_t& fingerID)
 
     if (_callback) _callback(true, _lastTemplate, fingerID, "Enrolled");
     return true;
+}
+
+bool FingerprintManager::setLED(bool on)
+{
+    // AuraLEDControl (0x35): ctrl=1 (always on/off), speed=0, color=0=off/1=on
+    uint8_t params[3] = {0x01, 0x00, static_cast<uint8_t>(on ? 0x01 : 0x00)};
+    uint8_t cmd[16];
+    size_t plen = buildPacket(cmd, 0x35, params, 3);
+    if (!sendAndRead(cmd, plen, 500)) {
+        return false;
+    }
+    return getConfCode() == 0x00;
+}
+
+void FingerprintManager::setCaptureCallback(CaptureCallback cb)
+{
+    _captureCallback = cb;
 }
 
 bool FingerprintManager::deleteAllFingers()

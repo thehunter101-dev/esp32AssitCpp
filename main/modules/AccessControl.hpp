@@ -20,9 +20,13 @@ public:
 
     bool startAccessFlow();
     bool registrationFlow();
+    void checkRemoteCommands();
+    void updateClock();
+    void resetDisplay();
 
 private:
     void uidToHex(const uint8_t* uid, uint8_t uidLen, char* hexOut);
+    void unlockSequence(const char* uidHex, uint16_t fingerID, const char* name, const char* reason);
 
     LCDI2C& _lcd;
     ServoManager& _servo;
@@ -30,6 +34,12 @@ private:
     RFIDManager& _rfid;
     AccessDB& _db;
     Indicators& _indicators;
+
+    uint64_t _cooldownUntil = 0;
+    int _failedAttempts = 0;
+    uint64_t _lockoutUntil = 0;
+    int _lastClockSec = -1;
+    bool _displayReady = false;
 
     static constexpr const char* TAG = "ACCESS_CTRL";
 };

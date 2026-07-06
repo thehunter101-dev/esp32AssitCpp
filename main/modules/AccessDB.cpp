@@ -192,7 +192,15 @@ std::string AccessDB::jsonFindString(const std::string& json, const char* key, c
     std::string val;
     while (pos < json.size() && json[pos] != '"') {
         if (json[pos] == '\\' && pos + 1 < json.size()) {
-            val += json[pos + 1];
+            char next = json[pos + 1];
+            switch (next) {
+                case 'n': val += '\n'; break;
+                case 'r': val += '\r'; break;
+                case 't': val += '\t'; break;
+                case '"': val += '"'; break;
+                case '\\': val += '\\'; break;
+                default: val += next; break;
+            }
             pos += 2;
         } else {
             val += json[pos];
@@ -268,4 +276,48 @@ bool AccessDB::logAttempt(const char* uidHex, bool success, const char* reason, 
         uidHex, success ? "true" : "false", reason, fingerID);
 
     return httpPost("/rest/v1/access_logs", body);
+}
+
+bool AccessDB::deactivateCard(const char* uidHex)
+{
+    char body[32];
+    snprintf(body, sizeof(body), "{\"active\":false}");
+
+    char endpoint[128];
+    snprintf(endpoint, sizeof(endpoint), "/rest/v1/authorized_cards?uid_hex=eq.%s", uidHex);
+
+    bool ok = httpPatch(endpoint, body);
+    if (ok) {
+        ESP_LOGI(TAG, "Tarjeta %s desactivada por 3 fallos", uidHex);
+    } else {
+        ESP_LOGE(TAG, "Fallo al desactivar tarjeta %s", uidHex);
+    }
+    return ok;
+}
+
+bool AccessDB::checkPendingCommands(std::string& command, int64_t& cmdId)
+{
+    std::string response;
+    if (!httpGet("/rest/v1/pending_commands?executed=eq.false&limit=1", response)) {
+        return false;
+    }
+
+    if (response.empty() || response == "[]") {
+        return false;
+    }
+
+    cmdId = jsonFindInt(response, "id", 0);
+    command = jsonFindString(response, "command", "");
+    return !command.empty();
+}
+
+bool AccessDB::markCommandExecuted(int64_t cmdId)
+{
+    char body[64];
+    snprintf(body, sizeof(body), "{\"executed\":true}");
+
+    char endpoint[128];
+    snprintf(endpoint, sizeof(endpoint), "/rest/v1/pending_commands?id=eq.%lld", (long long)cmdId);
+
+    return httpPatch(endpoint, body);
 }

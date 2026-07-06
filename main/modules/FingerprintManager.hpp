@@ -31,6 +31,10 @@ public:
     bool searchFinger(uint16_t& fingerID, uint16_t& score);
     bool enrollFinger(uint16_t& fingerID);
     bool deleteAllFingers();
+    bool setLED(bool on);
+
+    using CaptureCallback = std::function<void(int step)>;
+    void setCaptureCallback(CaptureCallback cb);
 
     const std::vector<uint8_t>& getLastTemplate() const;
     uint16_t getLastFingerID() const;
@@ -44,6 +48,7 @@ private:
     uint16_t _lastFingerID;
     nvs_handle_t _nvsHandle;
     ResultCallback _callback;
+    CaptureCallback _captureCallback;
 
     uint8_t _response[FPM_BUF_SIZE];
 

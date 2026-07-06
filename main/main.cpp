@@ -4,7 +4,9 @@
 #include "driver/gpio.h"
 #include "esp_log.h"
 #include "esp_timer.h"
+#include "esp_sntp.h"
 #include "nvs_flash.h"
+#include <time.h>
 #include "LCDI2C.hpp"
 #include "ServoManager.hpp"
 #include "FingerprintManager.hpp"
@@ -81,6 +83,33 @@ extern "C" void app_main()
     lcd.clean(1, 0);
     lcd.print("WiFi OK!          ", 1, 0);
 
+    lcd.clean(2, 0);
+    lcd.print("Sync hora...      ", 2, 0);
+    setenv("TZ", "COT5", 1);
+    tzset();
+    esp_sntp_setoperatingmode(SNTP_OPMODE_POLL);
+    esp_sntp_setservername(0, "pool.ntp.org");
+    esp_sntp_init();
+    time_t now = 0;
+    struct tm ti = {};
+    int retries = 0;
+    while (ti.tm_year < (2025 - 1900) && retries < 20) {
+        vTaskDelay(pdMS_TO_TICKS(500));
+        time(&now);
+        localtime_r(&now, &ti);
+        retries++;
+    }
+    lcd.clean(2, 0);
+    if (ti.tm_year >= (2025 - 1900)) {
+        char tbuf[16];
+        strftime(tbuf, sizeof(tbuf), "%H:%M", &ti);
+        lcd.print("Hora OK! ", 2, 0);
+        lcd.print(tbuf, 2, 9);
+    } else {
+        lcd.print("NTP fallo", 2, 0);
+    }
+    vTaskDelay(pdMS_TO_TICKS(1000));
+
     AccessDB accessDB(SUPABASE_URL, SUPABASE_KEY);
     AccessControl accessControl(lcd, servo, fingerprint, rfid, accessDB, indicators);
 
@@ -101,7 +130,17 @@ extern "C" void app_main()
     ESP_LOGI(TAG, "Sistema listo. BOOT toggle modo.");
 
     while (true) {
+        static uint64_t lastPoll = 0;
+        uint64_t nowMs = esp_timer_get_time() / 1000;
+        if (nowMs - lastPoll >= 5000) {
+            lastPoll = nowMs;
+            if (!registrationMode) {
+                accessControl.checkRemoteCommands();
+            }
+        }
+
         if (isBootToggled()) {
+            accessControl.resetDisplay();
             registrationMode = !registrationMode;
             lcd.clean(0, 0);
             lcd.clean(1, 0);

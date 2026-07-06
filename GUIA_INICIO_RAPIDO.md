@@ -1,35 +1,17 @@
-# 🚀 GUÍA DE INICIO RÁPIDO
+# GUÍA DE INICIO RÁPIDO
 
-## 1. Compilar el Firmware
+## 1. Prerrequisitos
 
-```bash
-cd c:\Users\pasto\Downloads\esp32AssitCpp
-idf.py build
-```
+- ESP-IDF 6.0.2
+- Python 3.11+ (para idf.py)
 
-**Resultado esperado:**
-```
-✅ esp32Test.bin generado exitosamente
-Tamaño: ~216 KB
-```
-
-## 2. Flashear al ESP32
-
-```bash
-# Detectar puerto COM
-idf.py -p COM_PORT flash
-
-# Ejemplo:
-idf.py -p COM3 flash
-```
-
-## 3. Configurar credenciales
+## 2. Configurar credenciales
 
 ```bash
 cp .env.example .env
 ```
 
-Editar `.env` con tus datos:
+Editar `.env`:
 
 ```env
 WIFI_SSID=tu_red_wifi
@@ -39,196 +21,91 @@ SUPABASE_KEY=tu_anon_key_supabase
 ```
 
 > Las credenciales se inyectan en tiempo de compilación desde `.env`.
-> El archivo `.env` está en `.gitignore` — no se sube al repositorio.
-const char* PASSWORD = "TuContraseña";
-const char* SERVER_URL = "http://192.168.1.100:8000/api/access";
-```
+> `.env` está en `.gitignore` — no se sube al repositorio.
 
-## 4. Iniciar Servidor Backend
+## 3. Configurar Supabase
 
-**Requisitos:**
+1. Crear proyecto en [supabase.com](https://supabase.com)
+2. Ir a **SQL Editor** y pegar `supabase_setup.sql`
+3. Anotar `Project URL` y `anon public key` desde **Settings > API**
+
+## 4. Compilar y flashear
+
 ```bash
-pip install flask flask-cors
-```
-
-**Ejecutar:**
-```bash
-python backend_server.py
-```
-
-**Salida:**
-```
-🚀 Servidor de Control de Acceso iniciado
-📊 API disponible en http://localhost:8000
-   - POST   /api/access  - Registrar intentos
-   - GET    /api/access  - Obtener historial
-   - GET    /api/stats   - Estadísticas
-   - GET    /health      - Health check
-```
-
-## 5. Probar Integraciones
-
-### Verificar que ESP32 se conecte:
-```bash
+idf.py build
+idf.py -p COM3 flash
 idf.py -p COM3 monitor
 ```
 
-Buscar en logs:
-```
-I (523) MAIN: Sistema listo. Esperando acceso...
-I (10000) AccessDB: Sincronización exitosa
-```
+## 5. Uso
 
-### Obtener historial desde servidor:
-```bash
-curl http://localhost:8000/api/access
-```
+### Modo Login (default)
+1. Acercar tarjeta RFID al RC522
+2. LCD muestra "Tarjeta OK!" y pide huella
+3. Poner dedo en AS608
+4. Si todo coincide: servo abre 3s, LCD muestra "ACCESO CONCEDIDO"
 
-### Obtener estadísticas:
-```bash
-curl http://localhost:8000/api/stats
-```
+### Modo Registro
+1. Presionar BOOT para cambiar a modo registro
+2. Acercar tarjeta nueva → poner dedo 2 veces (enrollment)
+3. Si la tarjeta ya existe → verifica la huella actual (misma = SIN CAMBIOS, distinta = actualiza, nueva = enroll)
+4. Tarjeta + huella quedan registrados/actualizados en Supabase
+
+### Desbloqueo Remoto
+1. Desde SQL Editor de Supabase o REST API:
+   ```sql
+   INSERT INTO pending_commands (command) VALUES ('unlock');
+   ```
+2. ESP32 lo detecta en ~5s y abre la puerta
+
+### Borrado masivo de huellas
+1. Estando en modo registro, mantener BOOT 3 segundos
 
 ## 6. Conexiones de Hardware
 
 ```
 ESP32 WROOM - 30 PINES
-┌──────────────────────┐
-│  GND ─ GND (power)   │
-│  5V  ─ 5V  (power)   │
-├──────────────────────┤
-│  LCD 2004A (I2C)     │
-│  GPIO 21 (SDA) ─ SDA │
-│  GPIO 22 (SCL) ─ SCL │
-│  GND  ─ GND          │
-│  5V   ─ VCC          │
-├──────────────────────┤
-│  AS608 Fingerprint   │
-│  GPIO 12 (TX) ─ RX   │
-│  GPIO 14 (RX) ─ TX   │
-│  GND  ─ GND          │
-│  5V   ─ 5V           │
-├──────────────────────┤
-│  SG90 Servo          │
-│  GPIO 13 (PWM) ─ PWM │
-│  GND  ─ GND          │
-│  5V   ─ 5V           │
-├──────────────────────┤
-│  RC522 RFID (SPI)    │
-│  GPIO 23 (MOSI) ─ DIN│
-│  GPIO 19 (MISO) ─ DOUT│
-│  GPIO 18 (CLK)  ─ CLK│
-│  GPIO 5  (CS)   ─ SDA│
-│  GPIO 4  (RST)  ─ RST│
-│  GND  ─ GND          │
-│  3.3V ─ VCC          │
-└──────────────────────┘
+
+  LCD 2004A (I2C)
+  GPIO 21 (SDA) ─ SDA
+  GPIO 22 (SCL) ─ SCL
+  GND ─ GND
+  5V ─ VCC
+
+  AS608 Fingerprint (UART)
+  GPIO 12 (TX) ─ RX
+  GPIO 14 (RX) ─ TX
+  GND ─ GND
+  5V ─ 5V
+
+  SG90 Servo (PWM)
+  GPIO 13 ─ PWM (naranja)
+  GND ─ marrón
+  5V ─ rojo
+
+  RC522 RFID (SPI)
+  GPIO 23 ─ MOSI
+  GPIO 19 ─ MISO
+  GPIO 18 ─ SCK
+  GPIO 5  ─ SDA (CS)
+  3.3V ─ VCC
+  GND ─ GND
+
+  Indicadores
+  GPIO 25 ─ LED verde (ánodo)
+  GPIO 26 ─ LED rojo (ánodo)
+  GPIO 27 ─ Buzzer activo (+)
+  GND ─ cátodos / buzzer (-)
 ```
 
-## 7. Diagrama de Flujo
+> El buzzer activo en GPIO 27 requiere transistor (no drive directo del GPIO).
 
-```
-┌──────────────────────┐
-│  Tarjeta RFID        │ Lectura automática
-│  (lectura de UID)    │
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│  Validar UID en DB   │ ¿Tarjeta autorizada?
-└──────────┬───────────┘
-           │
-       ✅ │ (Si)
-           │
-           ▼
-┌──────────────────────┐
-│  Solicitar Huella    │ Presionar dedo
-│  "Acerca tu dedo"    │ en sensor
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│  Capturar Plantilla  │ AS608 genera hash
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│  Comparar Huella     │ ¿Coincide BD?
-└──────────┬───────────┘
-           │
-       ✅ │ (Si coincide)
-           │
-           ▼
-┌──────────────────────┐
-│  Girar Servo         │ 0° → 30° → 0°
-│  (Abrir Puerta)      │ 1 seg puerta abierta
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│  Registrar Intento   │ NVS: JSON con datos
-│  success: true       │
-└──────────┬───────────┘
-           │
-    ┌──────┴──────┐
-    │             │
-    ▼             ▼
- Cada 60s    Envío HTTP
- si no       POST /api/access
- hay conexión
-```
+## 7. Troubleshooting
 
-## 8. Estructura JSON de Intentos
-
-**Guardado en ESP32 (NVS):**
-```json
-{
-  "timestamp": 1688132400,
-  "success": true,
-  "reason": "Access granted",
-  "fingerID": 1,
-  "uid": "12345678"
-}
-```
-
-**Enviado al servidor:**
-```json
-[
-  { "timestamp": 1688132400, "success": true, ... },
-  { "timestamp": 1688132450, "success": false, ... },
-  ...
-]
-```
-
-## 9. Troubleshooting
-
-### "❌ WiFi connection failed"
-- Verificar SSID/Password en main.cpp
-- Revisar que el router esté en rango
-
-### "❌ No hay intentos pendientes"
-- Verificar que el flujo de acceso se completó (LCD debe mostrar "ACCESO CONCEDIDO")
-- Revisar logs: `idf.py monitor`
-
-### "❌ Servidor no recibe datos"
-- Verificar URL en main.cpp (192.168.1.100 debe ser la IP del servidor)
-- Probar conectividad: `ping 192.168.1.100`
-- Ver logs del servidor Flask
-
-### "❌ Servo no se mueve"
-- Verificar conexión en GPIO 13
-- Revisar voltaje (5V mínimo)
-- Calibrar rango en ServoManager.cpp línea ~25
-
-## 10. URLs Útiles
-
-| Endpoint | Método | Propósito |
-|----------|--------|-----------|
-| `/api/access` | POST | Enviar intentos desde ESP32 |
-| `/api/access` | GET | Obtener historial (últimos 100) |
-| `/api/stats` | GET | Ver estadísticas (total, exitosos, etc) |
-| `/health` | GET | Verificar que servidor está vivo |
-
----
-
-**¿Problemas?** Revisar `ARQUITECTURA.md` para detalles técnicos.
+| Síntoma | Causa posible |
+|---------|---------------|
+| "RFID init fail" | Cableado SPI incorrecto o voltaje |
+| "FP init fail" | UART invertido (TX/RX cruzados) |
+| "WiFi connection failed" | Credenciales en `.env` incorrectas |
+| Servo no se mueve | PWM mal calibrado en `ServoManager.cpp` |
+| "Error al subir" | Supabase URL/key incorrecta o RLS mal configurada |

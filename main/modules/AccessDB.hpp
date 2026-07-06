@@ -15,6 +15,9 @@ public:
     bool registerCard(const char* uidHex, uint16_t fingerID, const char* name = "");
     bool checkCard(const char* uidHex, uint16_t& fingerID, std::string& name, bool& active);
     bool logAttempt(const char* uidHex, bool success, const char* reason, uint16_t fingerID);
+    bool checkPendingCommands(std::string& command, int64_t& cmdId);
+    bool markCommandExecuted(int64_t cmdId);
+    bool deactivateCard(const char* uidHex);
 
 private:
     std::string _url;
