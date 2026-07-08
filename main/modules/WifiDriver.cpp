@@ -59,10 +59,10 @@ void WifiDriver::init() {
     ESP_LOGI(TAG, "Driver Wi-Fi inicializado correctamente.");
 }
 
-void WifiDriver::conect() {
+bool WifiDriver::conect() {
     if (_wifi_event_group == nullptr) {
         ESP_LOGE(TAG, "Error: Debes llamar a init() antes de conect()");
-        return;
+        return false;
     }
 
     ESP_LOGI(TAG, "Iniciando proceso de conexión a %s...", _ssID.c_str());
@@ -75,9 +75,11 @@ void WifiDriver::conect() {
 
     if (bits & WIFI_CONNECTED_BIT) {
         ESP_LOGI(TAG, "¡Conectado exitosamente!");
-    } else if (bits & WIFI_FAIL_BIT) {
-        ESP_LOGE(TAG, "Fallo absoluto al intentar conectar a la red.");
+        return true;
     }
+
+    ESP_LOGE(TAG, "Fallo absoluto al intentar conectar a la red.");
+    return false;
 }
 
 void WifiDriver::disconect() {
@@ -112,40 +114,64 @@ void WifiDriver::_eventHandler(void* arg, esp_event_base_t event_base, int32_t e
 }
 
 void WifiDriver::scanNetworks() {
+
     ESP_LOGI(TAG, "Iniciando escaneo de redes Wi-Fi...");
 
     wifi_scan_config_t scan_config = {};
+
     scan_config.ssid = nullptr;
+
     scan_config.bssid = nullptr;
+
     scan_config.channel = 0;
+
     scan_config.show_hidden = true;
+
     scan_config.scan_type = WIFI_SCAN_TYPE_ACTIVE;
 
     esp_err_t ret = esp_wifi_scan_start(&scan_config, true);
+
     if (ret != ESP_OK) {
+
         ESP_LOGE(TAG, "Error al iniciar el escaneo de Wi-Fi: %s", esp_err_to_name(ret));
+
         return;
+
     }
 
     uint16_t number = 20;
+
     wifi_ap_record_t ap_info[20];
+
     memset(ap_info, 0, sizeof(ap_info));
 
     ESP_ERROR_CHECK(esp_wifi_scan_get_ap_records(&number, ap_info));
 
     ESP_LOGI(TAG, "Escaneo finalizado. Se encontraron %d redes de 2.4 GHz:", number);
+
     ESP_LOGI(TAG, "-------------------------------------------------------------");
+
     ESP_LOGI(TAG, "%-32s | %-7s | %-4s", "SSID", "RSSI", "CHAN");
+
     ESP_LOGI(TAG, "-------------------------------------------------------------");
 
     for (int i = 0; i < number; i++) {
+
         ESP_LOGI(TAG, "%-32s | %-7d | %-4d",
+
                  (char*)ap_info[i].ssid,
+
                  ap_info[i].rssi,
+
                  ap_info[i].primary);
+
     }
+
     ESP_LOGI(TAG, "-------------------------------------------------------------");
+
 }
+
+
 
 static esp_err_t _http_event_handler(esp_http_client_event_t *evt) {
     switch (evt->event_id) {

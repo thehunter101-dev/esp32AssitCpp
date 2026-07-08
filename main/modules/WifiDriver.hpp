@@ -19,7 +19,7 @@ class WifiDriver {
         WifiDriver(std::string ssID, std::string passWord, int maxRetry = 5);
         ~WifiDriver();
         void init();
-        void conect();
+        bool conect();
         void disconect();
         void scanNetworks();
         void makeGetRequest(const std::string& ipAddress, int port, const std::string& path);

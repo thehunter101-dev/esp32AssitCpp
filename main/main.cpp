@@ -23,7 +23,8 @@ extern "C" void app_main()
 {
     esp_err_t ret = nvs_flash_init();
     if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
-        ESP_ERROR_CHECK(nvs_flash_init());
+        ESP_ERROR_CHECK(nvs_flash_erase());
+        ret = nvs_flash_init();
     }
     ESP_ERROR_CHECK(ret);
 
@@ -79,9 +80,12 @@ extern "C" void app_main()
 
     WifiDriver wifi(WIFI_SSID, WIFI_PASS);
     wifi.init();
-    wifi.conect();
-    lcd.clean(1, 0);
-    lcd.print("WiFi OK!          ", 1, 0);
+    if (!wifi.conect()) {
+        lcd.print("WiFi FALLO!       ", 1, 0);
+        ESP_LOGE(TAG, "WiFi no conectado — el sistema continuara sin red");
+    } else {
+        lcd.print("WiFi OK!          ", 1, 0);
+    }
 
     lcd.clean(2, 0);
     lcd.print("Sync hora...      ", 2, 0);
