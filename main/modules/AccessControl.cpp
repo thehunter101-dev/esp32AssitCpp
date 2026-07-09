@@ -34,10 +34,28 @@ AccessControl::AccessControl(LCDI2C& lcd, ServoManager& servo,
 {
     _fingerprint.setCaptureCallback([this](int step) {
         _indicators.cardScanned();
+        if (step == 0) {
+            _lcd.putChar(LCDI2C::CUSTOM_CHECK, 1, 15);
+            _lcd.print("OK", 1, 17);
+        }
         if (step == 1) {
-            _lcd.putChar(LCDI2C::CUSTOM_FINGER, 2, 0);
-            _lcd.print(" Pon dedo 2/2       ", 2, 1);
+            _lcd.clean(2, 0);
             _lcd.clean(3, 0);
+            _lcd.putChar(LCDI2C::CUSTOM_CHECK, 2, 0);
+            _lcd.print(" 1er SCAN OK  ", 2, 1);
+            _lcd.putChar(LCDI2C::CUSTOM_ARROW, 3, 0);
+            _lcd.print(" QUITA el dedo", 3, 1);
+            vTaskDelay(pdMS_TO_TICKS(800));
+            _lcd.clean(2, 0);
+            _lcd.clean(3, 0);
+            _lcd.putChar(LCDI2C::CUSTOM_FINGER, 2, 0);
+            _lcd.print(" Pon dedo 2/2  ", 2, 1);
+        }
+        if (step == 2) {
+            _lcd.clean(2, 0);
+            _lcd.clean(3, 0);
+            _lcd.putChar(LCDI2C::CUSTOM_CHECK, 2, 0);
+            _lcd.print(" 2do SCAN OK!", 2, 1);
         }
     });
 }
@@ -206,6 +224,11 @@ bool AccessControl::startAccessFlow()
 
     _lcd.putChar(LCDI2C::CUSTOM_FINGER, 2, 0);
     _lcd.typewrite(" Pon tu dedo", 2, 1, 20);
+    _lcd.clean(3, 0);
+    for (int i = 0; i < 6; i++) {
+        _lcd.putChar('.', 3, i);
+        vTaskDelay(pdMS_TO_TICKS(250));
+    }
     showBootToggleHint(_lcd, false);
     ESP_LOGI(TAG, "Tarjeta %s autorizada (%s), esperando fingerID=%u", uidHex, name.c_str(), expectedFingerID);
 
@@ -257,8 +280,13 @@ bool AccessControl::startAccessFlow()
         _indicators.off();
 
         _lcd.clean(2, 0);
+        _lcd.clean(3, 0);
         _lcd.putChar(LCDI2C::CUSTOM_FINGER, 2, 0);
         _lcd.print(" Pon tu dedo", 2, 1);
+        for (int i = 0; i < 6; i++) {
+            _lcd.putChar('.', 3, i);
+            vTaskDelay(pdMS_TO_TICKS(250));
+        }
         showBootToggleHint(_lcd, false);
     }
 
@@ -395,9 +423,14 @@ bool AccessControl::registrationFlow()
     }
 
     if (fingerID == 0 && !verifiedMatch) {
-        _lcd.putChar(LCDI2C::CUSTOM_FINGER, 2, 0);
-        _lcd.print(" Pon dedo 1/2      ", 2, 1);
+        _lcd.clean(2, 0);
         _lcd.clean(3, 0);
+        _lcd.putChar(LCDI2C::CUSTOM_FINGER, 2, 0);
+        _lcd.typewrite(" Pon dedo 1/2", 2, 1, 20);
+        for (int i = 0; i < 6; i++) {
+            _lcd.putChar('.', 3, i);
+            vTaskDelay(pdMS_TO_TICKS(250));
+        }
 
         if (!_fingerprint.enrollFinger(fingerID)) {
             _lcd.clean(2, 0);
