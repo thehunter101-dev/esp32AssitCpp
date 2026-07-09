@@ -40,7 +40,7 @@ extern "C" void app_main()
     bootBtn.intr_type = GPIO_INTR_DISABLE;
     gpio_config(&bootBtn);
 
-    ServoManager servo(GPIO_NUM_13);
+    ServoManager servo(GPIO_NUM_13);  // SG90 a D13
     if (!servo.init()) {
         lcd.print("Servo init fail   ", 1, 0);
         ESP_LOGE(TAG, "Error al inicializar servo");
@@ -48,10 +48,10 @@ extern "C" void app_main()
     }
 
     RFIDManager rfid(
-        GPIO_NUM_23,
-        GPIO_NUM_19,
-        GPIO_NUM_18,
-        GPIO_NUM_5,
+        GPIO_NUM_23,  // MOSI
+        GPIO_NUM_19,  // MISO
+        GPIO_NUM_18,  // SCK
+        GPIO_NUM_5,   // CS (SDA)
         SPI3_HOST
     );
     if (!rfid.init()) {
@@ -61,9 +61,10 @@ extern "C" void app_main()
     }
 
     FingerprintManager fingerprint(
-        GPIO_NUM_12,
-        GPIO_NUM_14,
-        UART_NUM_1
+        GPIO_NUM_17,  // TX2 (ESP→FP)
+        GPIO_NUM_16,  // RX2 (ESP←FP)
+        UART_NUM_2,
+        57600
     );
     if (!fingerprint.init()) {
         lcd.print("FP init fail      ", 1, 0);
@@ -71,7 +72,7 @@ extern "C" void app_main()
         return;
     }
 
-    Indicators indicators(GPIO_NUM_25, GPIO_NUM_26, GPIO_NUM_27);
+    Indicators indicators(GPIO_NUM_26, GPIO_NUM_27, GPIO_NUM_25);  // verde D26, rojo D27, buzzer D25
     indicators.init();
 
     vTaskDelay(pdMS_TO_TICKS(500));
