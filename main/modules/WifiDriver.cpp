@@ -1,4 +1,5 @@
 #include "modules/WifiDriver.hpp"
+#include "esp_netif.h"
 
 WifiDriver::WifiDriver(std::string ssID, std::string passWord, int maxRetry) {
     _ssID = ssID;
@@ -9,6 +10,8 @@ WifiDriver::WifiDriver(std::string ssID, std::string passWord, int maxRetry) {
     _payload = nullptr;
     _payload_len = 0;
     _payload_cap = 0;
+    _connected = false;
+    _everConnected = false;
 }
 
 WifiDriver::~WifiDriver() {
@@ -68,18 +71,24 @@ bool WifiDriver::conect() {
     ESP_LOGI(TAG, "Iniciando proceso de conexión a %s...", _ssID.c_str());
 
     EventBits_t bits = xEventGroupWaitBits(_wifi_event_group,
-            WIFI_CONNECTED_BIT | WIFI_FAIL_BIT,
+            WIFI_CONNECTED_BIT,
             pdFALSE,
             pdFALSE,
-            portMAX_DELAY);
+            pdMS_TO_TICKS(3000));
 
     if (bits & WIFI_CONNECTED_BIT) {
         ESP_LOGI(TAG, "¡Conectado exitosamente!");
+        _connected = true;
+        _everConnected = true;
         return true;
     }
 
-    ESP_LOGE(TAG, "Fallo absoluto al intentar conectar a la red.");
+    ESP_LOGW(TAG, "WiFi no disponible aún — el sistema continuara sin red");
     return false;
+}
+
+bool WifiDriver::isConnected() {
+    return _connected;
 }
 
 void WifiDriver::disconect() {
@@ -96,19 +105,26 @@ void WifiDriver::_eventHandler(void* arg, esp_event_base_t event_base, int32_t e
         ESP_LOGI(TAG, "Buscando Punto de Acceso...");
     }
     else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_DISCONNECTED) {
-        if (driver->s_retry_num < driver->_maxRetry) {
-            esp_wifi_connect();
-            driver->s_retry_num++;
-            ESP_LOGI(TAG, "Intento de reconexión %d/%d...", driver->s_retry_num, driver->_maxRetry);
-        } else {
-            xEventGroupSetBits(driver->_wifi_event_group, WIFI_FAIL_BIT);
-        }
-        ESP_LOGE(TAG, "Desconectado/Fallo de conexión al AP");
+        driver->_connected = false;
+        driver->s_retry_num++;
+        esp_wifi_connect();
+        ESP_LOGW(TAG, "WiFi desconectado, reconectando... intento %d", driver->s_retry_num);
     }
     else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
         ip_event_got_ip_t* event = (ip_event_got_ip_t*) event_data;
         ESP_LOGI(TAG, "IP Asignada por DHCP: " IPSTR, IP2STR(&event->ip_info.ip));
+
+        esp_netif_dns_info_t dns;
+        dns.ip.type = ESP_IPADDR_TYPE_V4;
+        dns.ip.u_addr.ip4.addr = esp_ip4addr_aton("8.8.8.8");
+        esp_netif_set_dns_info(esp_netif_get_handle_from_ifkey("WIFI_STA_DEF"), ESP_NETIF_DNS_MAIN, &dns);
+        dns.ip.u_addr.ip4.addr = esp_ip4addr_aton("8.8.4.4");
+        esp_netif_set_dns_info(esp_netif_get_handle_from_ifkey("WIFI_STA_DEF"), ESP_NETIF_DNS_BACKUP, &dns);
+        ESP_LOGI(TAG, "DNS configurado: 8.8.8.8 / 8.8.4.4");
+
         driver->s_retry_num = 0;
+        driver->_connected = true;
+        driver->_everConnected = true;
         xEventGroupSetBits(driver->_wifi_event_group, WIFI_CONNECTED_BIT);
     }
 }

@@ -20,6 +20,7 @@ class WifiDriver {
         ~WifiDriver();
         void init();
         bool conect();
+        bool isConnected();
         void disconect();
         void scanNetworks();
         void makeGetRequest(const std::string& ipAddress, int port, const std::string& path);
@@ -38,6 +39,8 @@ class WifiDriver {
         char* _payload;
         size_t _payload_len;
         size_t _payload_cap;
+        bool _connected;
+        bool _everConnected;
 
         EventGroupHandle_t _wifi_event_group;
 

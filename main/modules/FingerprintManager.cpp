@@ -220,7 +220,7 @@ bool FingerprintManager::enrollFinger(uint16_t& fingerID)
 
     ESP_LOGI(TAG, "ENROLL: Primer scan OK. Quite el dedo.");
     if (_captureCallback) _captureCallback(1);
-    vTaskDelay(pdMS_TO_TICKS(2000));
+    vTaskDelay(pdMS_TO_TICKS(500));
 
     ESP_LOGI(TAG, "ENROLL: Ponga el mismo dedo (2da vez)");
     if (!waitForFinger(10000)) {
@@ -234,8 +234,25 @@ bool FingerprintManager::enrollFinger(uint16_t& fingerID)
         return false;
     }
 
-    ESP_LOGI(TAG, "ENROLL: Segundo scan OK. Creando modelo...");
+    ESP_LOGI(TAG, "ENROLL: Segundo scan OK. Quite el dedo.");
     if (_captureCallback) _captureCallback(2);
+    vTaskDelay(pdMS_TO_TICKS(500));
+
+    // Scan 3
+    ESP_LOGI(TAG, "ENROLL: Ponga el mismo dedo (3ra vez)");
+    if (!waitForFinger(10000)) {
+        return false;
+    }
+
+    uint8_t params3[1] = {0x01}; // Overwrite buffer 1 with 3rd scan
+    plen = buildPacket(cmd, 0x02, params3, 1);
+    if (!sendAndRead(cmd, plen, 1000) || getConfCode() != 0x00) {
+        ESP_LOGE(TAG, "enroll: 3er Img2Tz fallo 0x%02X", getConfCode());
+        return false;
+    }
+
+    ESP_LOGI(TAG, "ENROLL: Tercer scan OK. Creando modelo...");
+    if (_captureCallback) _captureCallback(3);
 
     plen = buildPacket(cmd, 0x05, nullptr, 0);
     if (!sendAndRead(cmd, plen, 1000) || getConfCode() != 0x00) {

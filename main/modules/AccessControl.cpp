@@ -42,20 +42,25 @@ AccessControl::AccessControl(LCDI2C& lcd, ServoManager& servo,
             _lcd.clean(2, 0);
             _lcd.clean(3, 0);
             _lcd.putChar(LCDI2C::CUSTOM_CHECK, 2, 0);
-            _lcd.print(" 1er SCAN OK  ", 2, 1);
-            _lcd.putChar(LCDI2C::CUSTOM_ARROW, 3, 0);
-            _lcd.print(" QUITA el dedo", 3, 1);
-            vTaskDelay(pdMS_TO_TICKS(800));
-            _lcd.clean(2, 0);
-            _lcd.clean(3, 0);
-            _lcd.putChar(LCDI2C::CUSTOM_FINGER, 2, 0);
-            _lcd.print(" Pon dedo 2/2  ", 2, 1);
+            _lcd.print(" 1er SCAN OK!  ", 2, 1);
+            _lcd.putChar(LCDI2C::CUSTOM_FINGER, 3, 0);
+            _lcd.print(" Manten dedo 2/3", 3, 1);
         }
         if (step == 2) {
             _lcd.clean(2, 0);
             _lcd.clean(3, 0);
             _lcd.putChar(LCDI2C::CUSTOM_CHECK, 2, 0);
-            _lcd.print(" 2do SCAN OK!", 2, 1);
+            _lcd.print(" 2do SCAN OK!  ", 2, 1);
+            _lcd.putChar(LCDI2C::CUSTOM_FINGER, 3, 0);
+            _lcd.print(" Manten dedo 3/3", 3, 1);
+        }
+        if (step == 3) {
+            _lcd.clean(2, 0);
+            _lcd.clean(3, 0);
+            _lcd.putChar(LCDI2C::CUSTOM_CHECK, 2, 0);
+            _lcd.print(" 3er SCAN OK!  ", 2, 1);
+            _lcd.putChar(LCDI2C::CUSTOM_ARROW, 3, 0);
+            _lcd.print(" Creando modelo", 3, 1);
         }
     });
 }
@@ -70,7 +75,7 @@ void AccessControl::uidToHex(const uint8_t* uid, uint8_t uidLen, char* hexOut)
 
 static void showBootToggleHint(LCDI2C& lcd, bool regMode)
 {
-    lcd.putChar(regMode ? LCDI2C::CUSTOM_ARROW : LCDI2C::CUSTOM_USER, 3, 18);
+    lcd.putChar(regMode ? LCDI2C::CUSTOM_ARROW : LCDI2C::CUSTOM_CARD, 3, 18);
     lcd.print(regMode ? "V" : "R", 3, 19);
 }
 
@@ -97,7 +102,7 @@ bool AccessControl::startAccessFlow()
             _lcd.clean(3, 0);
             _lcd.putChar(LCDI2C::CUSTOM_LOCK, 0, 6);
             _lcd.printCentered("SISTEMA BLOQUEADO", 1);
-            _lcd.printCentered("30s lockout...", 2);
+            _lcd.printCentered("5s lockout...", 2);
             _displayReady = true;
         }
         vTaskDelay(pdMS_TO_TICKS(500));
@@ -123,6 +128,8 @@ bool AccessControl::startAccessFlow()
         char row0[21] = "                    ";
         memcpy(row0 + 7, tbuf, 5);
         _lcd.print(row0, 0, 0);
+        _showWifiIcon = true;
+        if (_wifiConnected && _showWifiIcon) _lcd.putChar(LCDI2C::CUSTOM_WIFI, 0, 19);
         _lastClockSec = ti.tm_sec;
         _displayReady = true;
     } else {
@@ -216,7 +223,7 @@ bool AccessControl::startAccessFlow()
     _lcd.print("Tarjeta OK!", 0, 1);
 
     if (!name.empty()) {
-        _lcd.putChar(LCDI2C::CUSTOM_USER, 1, 0);
+        _lcd.putChar(LCDI2C::CUSTOM_CARD, 1, 0);
         char nameBuf[20];
         snprintf(nameBuf, sizeof(nameBuf), " Hola %.12s!", name.c_str());
         _lcd.typewrite(nameBuf, 1, 1, 25);
@@ -259,7 +266,7 @@ bool AccessControl::startAccessFlow()
 
         if (fpAttempt >= 3) {
             _db.deactivateCard(uidHex);
-            _lockoutUntil = esp_timer_get_time() / 1000 + 30000;
+            _lockoutUntil = esp_timer_get_time() / 1000 + 5000;
             _db.logAttempt(uidHex, false, "Card blocked - 3 failed attempts", 0);
             ESP_LOGW(TAG, "LOCKOUT 30s + tarjeta %s desactivada", uidHex);
             _lcd.clean(0, 0);
@@ -268,7 +275,7 @@ bool AccessControl::startAccessFlow()
             _lcd.clean(3, 0);
             _lcd.putChar(LCDI2C::CUSTOM_LOCK, 0, 0);
             _lcd.print(" TARJETA BLOQUEADA", 0, 1);
-            _lcd.printCentered("30s lockout...", 1);
+            _lcd.printCentered("5s lockout...", 1);
             _lcd.printCentered(uidHex, 2);
             vTaskDelay(pdMS_TO_TICKS(3000));
             _indicators.off();
@@ -306,6 +313,8 @@ bool AccessControl::registrationFlow()
     _lcd.clean(3, 0);
     _lcd.putChar(LCDI2C::CUSTOM_CARD, 0, 0);
     _lcd.typewrite(" MODO REGISTRO", 0, 1, 25);
+    _showWifiIcon = true;
+    if (_wifiConnected) _lcd.putChar(LCDI2C::CUSTOM_WIFI, 0, 19);
     _lcd.putChar(LCDI2C::CUSTOM_ARROW, 1, 0);
     _lcd.typewrite(" Acerca tarjeta", 1, 1, 20);
 
@@ -426,10 +435,44 @@ bool AccessControl::registrationFlow()
         _lcd.clean(2, 0);
         _lcd.clean(3, 0);
         _lcd.putChar(LCDI2C::CUSTOM_FINGER, 2, 0);
-        _lcd.typewrite(" Pon dedo 1/2", 2, 1, 20);
-        for (int i = 0; i < 6; i++) {
-            _lcd.putChar('.', 3, i);
-            vTaskDelay(pdMS_TO_TICKS(250));
+        _lcd.print(" Coloca tu dedo", 2, 1);
+        _lcd.print("para verificar...", 3, 1);
+
+        uint16_t checkID = 0, checkScore = 0;
+        bool dupFound = false;
+        uint32_t dupStart = esp_timer_get_time() / 1000;
+        while ((esp_timer_get_time() / 1000 - dupStart) < 8000) {
+            if (_fingerprint.detectFinger()) {
+                if (_fingerprint.searchFinger(checkID, checkScore)) {
+                    dupFound = true;
+                }
+                break;
+            }
+            vTaskDelay(pdMS_TO_TICKS(200));
+        }
+
+        if (dupFound) {
+            _lcd.clean(2, 0);
+            _lcd.clean(3, 0);
+            _lcd.putChar(LCDI2C::CUSTOM_CROSS, 2, 0);
+            _lcd.print(" HUELLA YA EXISTE", 2, 1);
+            char dupBuf[21];
+            snprintf(dupBuf, sizeof(dupBuf), "Registrada ID=%u", checkID);
+            _lcd.printCentered(dupBuf, 3);
+            vTaskDelay(pdMS_TO_TICKS(2500));
+            _indicators.off();
+            return false;
+        }
+
+        _lcd.clean(2, 0);
+        _lcd.clean(3, 0);
+        _lcd.putChar(LCDI2C::CUSTOM_FINGER, 2, 0);
+        _lcd.typewrite(" Pon dedo 1/3", 2, 1, 20);
+        _lcd.putChar(LCDI2C::CUSTOM_ARROW, 3, 0);
+        _lcd.print(" Firme y quieto", 3, 1);
+        for (int i = 0; i < 3; i++) {
+            _lcd.putChar('.', 3, 17 + i);
+            vTaskDelay(pdMS_TO_TICKS(500));
         }
 
         if (!_fingerprint.enrollFinger(fingerID)) {
@@ -495,7 +538,7 @@ void AccessControl::unlockSequence(const char* uidHex, uint16_t fingerID, const 
     _lcd.printCentered("ACCESO CONCEDIDO", 1);
 
     if (name && name[0]) {
-        _lcd.putChar(LCDI2C::CUSTOM_USER, 2, 0);
+        _lcd.putChar(LCDI2C::CUSTOM_CARD, 2, 0);
         char nameBuf[20];
         snprintf(nameBuf, sizeof(nameBuf), " %s", name);
         _lcd.typewrite(nameBuf, 2, 1, 30);
@@ -508,9 +551,9 @@ void AccessControl::unlockSequence(const char* uidHex, uint16_t fingerID, const 
     }
     ESP_LOGI(TAG, "Unlock: %s fingerID=%u", uidHex, fingerID);
 
-    _servo.setAngleSmooth(30, 20);
-    vTaskDelay(pdMS_TO_TICKS(1000));
-    _servo.setAngleSmooth(90, 20);
+    _servo.setAngleSmooth(0, 20);
+    vTaskDelay(pdMS_TO_TICKS(2000));
+    _servo.setAngleSmooth(135, 20);
 
     _db.logAttempt(uidHex, true, reason, fingerID);
 
@@ -524,6 +567,17 @@ void AccessControl::unlockSequence(const char* uidHex, uint16_t fingerID, const 
 void AccessControl::resetDisplay()
 {
     _displayReady = false;
+    _showWifiIcon = false;
+}
+
+void AccessControl::setWifiConnected(bool connected)
+{
+    _wifiConnected = connected;
+    if (_wifiConnected && _showWifiIcon) {
+        _lcd.putChar(LCDI2C::CUSTOM_WIFI, 0, 19);
+    } else {
+        _lcd.putChar(' ', 0, 19);
+    }
 }
 
 void AccessControl::updateClock()
@@ -540,6 +594,7 @@ void AccessControl::updateClock()
     strftime(tbuf, sizeof(tbuf), "%H:%M", &ti);
     _lcd.print(tbuf, 0, 7);
     _lcd.print("      ", 0, 12);
+    if (_wifiConnected && _showWifiIcon) _lcd.putChar(LCDI2C::CUSTOM_WIFI, 0, 19);
 }
 
 void AccessControl::checkRemoteCommands()
@@ -565,7 +620,7 @@ void AccessControl::checkRemoteCommands()
         _lcd.clean(3, 0);
         _lcd.printCentered("DESBLOQUEO REMOTO", 1);
         _lcd.printCentered("Abriendo puerta...", 2);
-        vTaskDelay(pdMS_TO_TICKS(1000));
+        vTaskDelay(pdMS_TO_TICKS(3000));
 
         unlockSequence("REMOTE", 0, "", "Remote unlock");
         _cooldownUntil = esp_timer_get_time() / 1000 + 5000;

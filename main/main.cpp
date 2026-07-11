@@ -110,8 +110,10 @@ extern "C" void app_main()
         strftime(tbuf, sizeof(tbuf), "%H:%M", &ti);
         lcd.print("Hora OK! ", 2, 0);
         lcd.print(tbuf, 2, 9);
+        ESP_LOGI(TAG, "NTP sincronizado: %s", tbuf);
     } else {
         lcd.print("NTP fallo", 2, 0);
+        ESP_LOGW(TAG, "NTP fallo — no se pudo sincronizar hora");
     }
     vTaskDelay(pdMS_TO_TICKS(1000));
 
@@ -119,20 +121,27 @@ extern "C" void app_main()
     AccessControl accessControl(lcd, servo, fingerprint, rfid, accessDB, indicators);
 
     bool registrationMode = false;
+    bool lastWifiStatus = wifi.isConnected();
 
     lcd.clean(0, 0);
     lcd.clean(1, 0);
     lcd.clean(2, 0);
     lcd.clean(3, 0);
+    vTaskDelay(pdMS_TO_TICKS(10));
     lcd.putChar(LCDI2C::CUSTOM_UNLOCK, 0, 9);
     lcd.printCentered("SISTEMA LISTO", 1);
-    lcd.putChar(LCDI2C::CUSTOM_USER, 2, 0);
+    vTaskDelay(pdMS_TO_TICKS(10));
+    lcd.putChar(LCDI2C::CUSTOM_CARD, 2, 0);
     lcd.print(" BOOT=cambio", 2, 1);
     lcd.putChar(LCDI2C::CUSTOM_ARROW, 3, 0);
     lcd.print(" Login>", 3, 1);
     lcd.putChar(LCDI2C::CUSTOM_CARD, 3, 10);
     lcd.putChar(LCDI2C::CUSTOM_FINGER, 3, 12);
+    if (lastWifiStatus) {
+        accessControl.setWifiConnected(true);
+    }
     ESP_LOGI(TAG, "Sistema listo. BOOT toggle modo.");
+    vTaskDelay(pdMS_TO_TICKS(1500));
 
     while (true) {
         static uint64_t lastPoll = 0;
@@ -141,6 +150,18 @@ extern "C" void app_main()
             lastPoll = nowMs;
             if (!registrationMode) {
                 accessControl.checkRemoteCommands();
+            }
+
+            bool currentWifiStatus = wifi.isConnected();
+            if (currentWifiStatus != lastWifiStatus) {
+                lastWifiStatus = currentWifiStatus;
+                accessControl.setWifiConnected(currentWifiStatus);
+                if (!currentWifiStatus) {
+                    ESP_LOGW(TAG, "WiFi desconectado, reconectando...");
+                } else {
+                    ESP_LOGI(TAG, "WiFi reconectado");
+                    esp_sntp_init();
+                }
             }
         }
 
@@ -156,8 +177,8 @@ extern "C" void app_main()
                 lcd.print(" REGISTRO", 0, 1);
                 lcd.putChar(LCDI2C::CUSTOM_ARROW, 1, 0);
                 lcd.print(" Iniciar registro", 1, 1);
-                lcd.putChar(LCDI2C::CUSTOM_ARROW, 2, 0);
-                lcd.print(" BOOT 3s=limpiar", 2, 1);
+                lcd.putChar(LCDI2C::CUSTOM_FINGER, 2, 0);
+                lcd.print(" BOOT 3s=borrar", 2, 1);
                 lcd.putChar(LCDI2C::CUSTOM_ARROW, 3, 0);
                 lcd.print(" BOOT=volver", 3, 1);
 
@@ -190,13 +211,13 @@ extern "C" void app_main()
                     lcd.print(" REGISTRO", 0, 1);
                     lcd.putChar(LCDI2C::CUSTOM_ARROW, 1, 0);
                     lcd.print(" Iniciar registro", 1, 1);
-                    lcd.putChar(LCDI2C::CUSTOM_ARROW, 2, 0);
-                    lcd.print(" BOOT 3s=limpiar", 2, 1);
+                    lcd.putChar(LCDI2C::CUSTOM_FINGER, 2, 0);
+                    lcd.print(" BOOT 3s=borrar", 2, 1);
                     lcd.putChar(LCDI2C::CUSTOM_ARROW, 3, 0);
                     lcd.print(" BOOT=volver", 3, 1);
                 }
             } else {
-                lcd.putChar(LCDI2C::CUSTOM_USER, 0, 0);
+                lcd.putChar(LCDI2C::CUSTOM_CARD, 0, 0);
                 lcd.print(" LOGIN", 0, 1);
                 lcd.putChar(LCDI2C::CUSTOM_CARD, 1, 0);
                 lcd.print(" Acerca tarjeta", 1, 1);

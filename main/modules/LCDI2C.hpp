@@ -27,7 +27,7 @@ class LCDI2C{
   static constexpr uint8_t CUSTOM_CARD = 4;
   static constexpr uint8_t CUSTOM_FINGER = 5;
   static constexpr uint8_t CUSTOM_ARROW = 6;
-  static constexpr uint8_t CUSTOM_USER = 7;
+  static constexpr uint8_t CUSTOM_WIFI = 7;
 
   private:
   gpio_num_t _sdaPin;

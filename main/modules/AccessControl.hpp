@@ -23,6 +23,7 @@ public:
     void checkRemoteCommands();
     void updateClock();
     void resetDisplay();
+    void setWifiConnected(bool connected);
 
 private:
     void uidToHex(const uint8_t* uid, uint8_t uidLen, char* hexOut);
@@ -40,6 +41,8 @@ private:
     uint64_t _lockoutUntil = 0;
     int _lastClockSec = -1;
     bool _displayReady = false;
+    bool _wifiConnected = false;
+    bool _showWifiIcon = false;
 
     static constexpr const char* TAG = "ACCESS_CTRL";
 };
