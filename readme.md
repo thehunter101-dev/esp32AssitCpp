@@ -83,7 +83,7 @@ Indicators ────────┤ ← LED verde/rojo + buzzer
 
 ```
 LCD 2004A:  21→SDA  22→SCL  GND→GND  5V→VCC
-RC522:      23→MOSI 19→MISO  18→SCK   5→CS   3.3V→VCC  GND→GND
+RC522:      19→MISO 23→MOSI   18→SCK   5→CS   3.3V→VCC  GND→GND
 AS608:      17→RX   16→TX    GND→GND  5V→VCC  (cruzar TX/RX)
 SG90:       13→señal GND→marrón  5V→rojo
 LED verde:  26→ánodo  GND→cátodo
