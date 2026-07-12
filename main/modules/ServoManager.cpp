@@ -3,7 +3,7 @@
 #include "freertos/task.h"
 
 ServoManager::ServoManager(gpio_num_t pin, ledc_channel_t channel, ledc_timer_t timer)
-    : _pin(pin), _channel(channel), _timer(timer), _currentAngle(90) {}
+    : _pin(pin), _channel(channel), _timer(timer), _currentAngle(140) {}
 
 bool ServoManager::init()
 {
@@ -25,7 +25,7 @@ bool ServoManager::init()
     ledc_channel.timer_sel = _timer;
     ledc_channel.intr_type = LEDC_INTR_DISABLE;
     ledc_channel.gpio_num = _pin;
-    ledc_channel.duty = 1229;
+    ledc_channel.duty = 1696;
     ledc_channel.hpoint = 0;
 
     if (ledc_channel_config(&ledc_channel) != ESP_OK) {
@@ -33,7 +33,7 @@ bool ServoManager::init()
         return false;
     }
 
-    setAngle(90);
+    setAngle(140);
     ESP_LOGI(TAG, "Servo inicializado en GPIO %d", _pin);
     return true;
 }

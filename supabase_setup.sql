@@ -3,7 +3,7 @@
 
 CREATE TABLE IF NOT EXISTS authorized_cards (
     uid_hex TEXT PRIMARY KEY,
-    finger_id INTEGER NOT NULL,
+    finger_id INTEGER DEFAULT NULL,
     name TEXT DEFAULT '',
     active BOOLEAN DEFAULT true,
     created_at TIMESTAMP DEFAULT (NOW() AT TIME ZONE 'America/Bogota')

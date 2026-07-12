@@ -553,7 +553,7 @@ void AccessControl::unlockSequence(const char* uidHex, uint16_t fingerID, const 
 
     _servo.setAngleSmooth(0, 20);
     vTaskDelay(pdMS_TO_TICKS(2000));
-    _servo.setAngleSmooth(135, 20);
+    _servo.setAngleSmooth(140, 20);
 
     _db.logAttempt(uidHex, true, reason, fingerID);
 
