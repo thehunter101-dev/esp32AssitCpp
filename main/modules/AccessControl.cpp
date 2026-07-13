@@ -535,7 +535,7 @@ void AccessControl::unlockSequence(const char* uidHex, uint16_t fingerID, const 
     _lcd.clean(2, 0);
     _lcd.clean(3, 0);
     _lcd.putChar(LCDI2C::CUSTOM_UNLOCK, 0, 8);
-    _lcd.printCentered("ASISTENCIA REGISTRADA", 1);
+    _lcd.printCentered("ASIST. REGISTRADA", 1);
 
     if (name && name[0]) {
         _lcd.putChar(LCDI2C::CUSTOM_CARD, 2, 0);
@@ -558,8 +558,8 @@ void AccessControl::unlockSequence(const char* uidHex, uint16_t fingerID, const 
     _db.logAttempt(uidHex, true, reason, fingerID);
 
     _lcd.clean(3, 0);
-    _lcd.putChar(LCDI2C::CUSTOM_CHECK, 3, 2);
-    _lcd.print("Asistencia tomada!", 3, 3);
+    _lcd.putChar(LCDI2C::CUSTOM_CHECK, 3, 1);
+    _lcd.print("Asistencia tomada", 3, 2);
     vTaskDelay(pdMS_TO_TICKS(2000));
     _indicators.off();
 }
